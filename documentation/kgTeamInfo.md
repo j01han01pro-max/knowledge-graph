@@ -1,17 +1,17 @@
-site_name: Metadata Service Docs
-repo_url: https://git.cglcloud.com/Metadata-Service/mds-docs
+site_name: KG Team Docs
+repo_url: https://git.com/KGTeam-Service/docs
 theme:
   name: 'material'
-  logo: MetadataServiceDocs/images/mds_icon.png
+  logo: KGTeamDocs/images/icon.png
   features:
     - navigation.sections
     - navigation.top
     - search.highlight
     - toc.follow
   palette:
-    - scheme: cargill
+    - scheme: co
 extra_css:
-  - stylesheets/cargill_mkdocs.css
+  - stylesheets/co_mkdocs.css
 use_directory_urls: false
 markdown_extensions:
   - toc:
@@ -49,39 +49,39 @@ plugins:
   - mkdocs-video
   - glightbox
 extra_javascript:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - 'https://'
 extra:
   captain:
-    image: cglclouddev-cglclouddev-docker-utilities.jfrog.io/captain:1-stable
+    image: 
   docker:
-    image: cglclouddev-cglclouddev-docker-utilities.jfrog.io/drone-plugin-cgl-docker:3-stable
+    image: 
 
 nav:
   - Home: index.md
-  - Core Concepts: MetadataServiceDocs/NewConceptsTools.md
-  - Ontology Deep-Dive: MetadataServiceDocs/ONDeepDive.md
-  - Knowledge Graph Deep-Dive: MetadataServiceDocs/KGDeepDive.md
-  - Use Cases: MetadataServiceDocs/UseCases.md
-  - Cargill 2030 Support: MetadataServiceDocs/Cargill2030Support.md
-  - Team Roles: MetadataServiceDocs/TeamRoles.md
+  - Core Concepts: KGTeamDocs/NewConceptsTools.md
+  - Ontology Deep-Dive: KGTeamDocs/ONDeepDive.md
+  - Knowledge Graph Deep-Dive: KGTeamDocs/KGDeepDive.md
+  - Use Cases: KGTeamServiceDocs/UseCases.md
+  - Support: KGTeamDocs/Cargill2030Support.md
+  - Team Roles: KGTeamDocs/TeamRoles.md
   - Infrastructure:
     - Architecture: Platform/Architecture.md
     - Tech Stack: Platform/TechStack.md
     - Web Application: Platform/WebApplication.md
   - Projects:
-    - ANH Lifecycle Assessment Repository: Projects/ALR.md
-    - ANH Integration Profiling & Management: Projects/IPM.md
+    - ALR: Projects/ALR.md
+    - IPM: Projects/IPM.md
   - Onboarding:
-    - Team Information: Onboarding/MDSTeam/TeamInfo.md
+    - Team Information: Onboarding/KGTeam/TeamInfo.md
     - Engineering:
-      - Team Engineering Sites: Onboarding/MDSTeam/Engineering/MDSPlatformResources/PlatformSites.md
-      - Entitlements: Onboarding/MDSTeam/Engineering/MDSPlatformResources/Entitlements.md
+      - Team Engineering Sites: Onboarding/KGTeam/Engineering/KGTeamResources/PlatformSites.md
+      - Entitlements: Onboarding/KGTeam/Engineering/KGTeamResources/Entitlements.md
       - GitHub:
-        - Team Git Repo: Onboarding/MDSTeam/Engineering/Git/TeamSite.md
-        - Git Strategy: Onboarding/MDSTeam/Engineering/Git/GitStrategy.md
+        - Team Git Repo: Onboarding/KGTeam/Engineering/Git/TeamSite.md
+        - Git Strategy: Onboarding/KGTeam/Engineering/Git/GitStrategy.md
       - Resources, Training & Documentation:
-        - Core Concepts: Onboarding/MDSTeam/Engineering/TechnologyResources/Concepts.md
-        - Tools & Technology: Onboarding/MDSTeam/Engineering/TechnologyResources/ToolsTechnology.md
-        - Programming & Query Languages: Onboarding/MDSTeam/Engineering/TechnologyResources/ProgrammingLanguages.md
+        - Core Concepts: Onboarding/KGTeam/Engineering/TechnologyResources/Concepts.md
+        - Tools & Technology: Onboarding/KGTeam/Engineering/TechnologyResources/ToolsTechnology.md
+        - Programming & Query Languages: Onboarding/KGTeam/Engineering/TechnologyResources/ProgrammingLanguages.md
     - Graph Projects:
       - Project Implementation Workflow: Onboarding/Projects/ProjectProcess.md
