@@ -1,0 +1,50 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX coreo: <https://semantic-data.jlh.com/im/jlh/jlho#>
+PREFIX coreao: <https://semantic-data.jlh.com/im/jlh/jlhao#>
+PREFIX projo: <https://semantic-data.jlh.com/im/proj/projo#>
+PREFIX base: <https://semantic-data.jlh.com/core/>
+
+# Mapping Template
+# Version 1.0.0
+# data files in csv format MUST be saved with utf-8 encoding (not BOM)
+
+CONSTRUCT {
+
+###############
+#### Source ###
+###############
+
+	?CompanyURI a coreo:Company ;
+		coreao:prefLabel ?CompanyPrefLabel ;
+		coreao:altLabel ?CompanyAltLabelFinal .
+}
+
+WHERE 
+{
+	#############################
+	### Base Binding ###
+	#############################
+
+	BIND ("https://semantic-data.jlh.com/core/" as ?Base) #All data URIs will have the namespace: https://semantic-data.jlh.com/core/
+    BIND (CONCAT(?Base, "jlho/") as ?BaseCoreOntology) #Company Core Ontology
+	BIND (CONCAT(?Base, "projo/") as ?BaseProjOntology) #Project Ontology ID
+
+# declare all core ontology classes
+	BIND (LCASE(CONCAT(?BaseCoreOntology, "Company", "/")) as ?ClassCompany) #http://semantic-data.jlh.com/core/coreo#Company#
+
+	#############################
+	### Source File Binding ###
+	#############################
+
+    BIND ("en-us" AS ?PrefLabelLang)
+	BIND (IF(?CompanyLabel != "", REPLACE(REPLACE(REPLACE(REPLACE(LCASE(?CompanyLabel), "[ñ]", "n"), "[áàâäã]", "a"), "[éèêë]", "e"), "[íìîï]", "i"), 1/0) AS ?CompanyL1)
+	BIND (IF(?CompanyLabel != "", REPLACE(REPLACE(?CompanyL1, "[^a-z0-9 ]", ""), "^\\s*|\\s*$", ""), 1/0) AS ?CompanyL2)
+	BIND (IF(?CompanyLabel != "", REPLACE(?CompanyL2, " ", "-"), 1/0) AS ?CompanyL3)
+	BIND (IF(?CompanyLabel != "", ENCODE_FOR_URI(REPLACE(?CompanyL3, "-{2,}", "-")), 1/0) AS ?CompanyL4)
+    BIND (IF(?CompanyLabel != "", URI(CONCAT(?ClassCompany,?CompanyL4)), 1/0) AS ?CompanyURI)
+	BIND (IF(?CompanyLabel != "", STRLANG(STR(?CompanyLabel), ?PrefLabelLang), 1/0) AS ?CompanyPrefLabel)
+    BIND (IF(?CompanyAltLabel != "", (IF(?CompanyAltLabelLang != "", ?CompanyAltLabelLang, ?PrefLabelLang)), 1/0) AS ?CompanyAltLabelLangValue)
+    BIND (IF(?CompanyAltLabel != "", STRLANG(STR(?CompanyAltLabel), ?CompanyAltLabelLangValue), 1/0) AS ?CompanyAltLabelFinal)
+}

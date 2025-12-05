@@ -1,0 +1,883 @@
+@prefix : https://semantic-data.jlh.com/jlh/jlho-skos#
+@prefix jlho-skos: https://semantic-data.jlh.com/jlh/jlho-skos#
+@prefix skos: http://www.w3.org/2004/02/skos/core# .
+@prefix jlho: https://semantic-data.jlh.com/jlh/jlho# .
+@prefix rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# .
+@prefix xsd: http://www.w3.org/2001/XMLSchema# .
+
+SKOS Concept Scheme for the C Company Core Ontology
+
+https://semantic-data.jlh.com/jlh/jlho-skos rdf:type skos:ConceptScheme ;
+    skos:prefLabel "C Company Core Ontology — Conceptual Glossary"@en ;
+    skos:definition "A SKOS concept scheme representing human-readable glossary terms aligned to the coreo ontology classes."@en .
+
+#################################################################
+
+Pattern: For each class in coreo, create a skos:Concept with
+- skos:prefLabel (from jlhao:prefLabel)
+- skos:definition (from jlhao:definition)
+- skos:inScheme referring to the concept scheme above
+- skos:exactMatch pointing to the corresponding OWL class URI
+
+#################################################################
+
+Entity
+
+jlho-skos:Concept_Entity rdf:type skos:Concept ;
+    skos:prefLabel "Entity"@en ;
+    skos:definition "Something with a distinct and independent existence."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Entity .
+
+Person
+
+jlho-skos:Concept_Person rdf:type skos:Concept ;
+    skos:prefLabel "Person"@en ;
+    skos:definition "A person or an entity with human qualities."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Person .
+
+Organization
+
+jlho-skos:Concept_Organization rdf:type skos:Concept ;
+    skos:prefLabel "Organization"@en ;
+    skos:definition "A framework of authority within which a person, persons, or groups of people act, or are designated to act, towards some purpose."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Organization .
+
+Company
+
+jlho-skos:Concept_Company rdf:type skos:Concept ;
+    skos:prefLabel "Company"@en ;
+    skos:definition "An organization that produces or sells goods or services in order to make a profit."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Company .
+
+Company Unit
+
+jlho-skos:Concept_CompanyUnit rdf:type skos:Concept ;
+    skos:prefLabel "Company Unit"@en ;
+    skos:definition "A distinct part, segment, or entity within a larger company."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:CompanyUnit .
+
+Organization Member
+
+jlho-skos:Concept_OrganizationMember rdf:type skos:Concept ;
+    skos:prefLabel "Organization Member"@en ;
+    skos:definition "Entity (person or organization) that has a membership role with respect to some organization."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:OrganizationMember .
+
+Role
+
+jlho-skos:Concept_Role rdf:type skos:Concept ;
+    skos:prefLabel "Role"@en ;
+    skos:definition "A function assumed or part played by a thing in a particular situation."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Role .
+
+Person Role
+
+jlho-skos:Concept_PersonRole rdf:type skos:Concept ;
+    skos:prefLabel "Person Role"@en ;
+    skos:definition "A function assumed or part played by a person."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:PersonRole .
+
+Organization Role
+
+jlho-skos:Concept_OrganizationRole rdf:type skos:Concept ;
+    skos:prefLabel "Organization Role"@en ;
+    skos:definition "A function assumed or part played by an organization."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:OrganizationRole .
+
+Identifier
+
+jlho-skos:Concept_Identifier rdf:type skos:Concept ;
+    skos:prefLabel "Identifier"@en ;
+    skos:definition "Something, such as an ID or code, that identifies something."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Identifier .
+
+Unique Identifier
+
+jlho-skos:Concept_UniqueIdentifier rdf:type skos:Concept ;
+    skos:prefLabel "Unique Identifier"@en ;
+    skos:definition "Something, such as an ID or code, that uniquely identifies something."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:UniqueIdentifier .
+
+Internal ID
+
+jlho-skos:Concept_InternalID rdf:type skos:Concept ;
+    skos:prefLabel "Internal ID"@en ;
+    skos:definition "A unique numeric identifier assigned to a record, used for internal referencing and management."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:InternalID .
+
+Location
+
+jlho-skos:Concept_Location rdf:type skos:Concept ;
+    skos:prefLabel "Location"@en ;
+    skos:definition "A particular place or position."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Location .
+
+Physical Location
+
+jlho-skos:Concept_PhysicalLocation rdf:type skos:Concept ;
+    skos:prefLabel "Physical Location"@en ;
+    skos:definition "A specific place where an object, person, or entity is situated in the physical world."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:PhysicalLocation .
+
+Geographic Location
+
+jlho-skos:Concept_GeographicLocation rdf:type skos:Concept ;
+    skos:prefLabel "Geographic Location"@en ;
+    skos:definition "A specific place, described by its position and features."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:GeographicLocation .
+
+Address
+
+jlho-skos:Concept_Address rdf:type skos:Concept ;
+    skos:prefLabel "Address"@en ;
+    skos:definition "The particulars of the place where someone lives or an organization is situated."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Address .
+
+Country
+
+jlho-skos:Concept_Country rdf:type skos:Concept ;
+    skos:prefLabel "Country"@en ;
+    skos:definition "A geopolitical entity representing a distinct territorial body or political entity or dependent territory."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Country .
+
+State
+
+jlho-skos:Concept_State rdf:type skos:Concept ;
+    skos:prefLabel "State"@en ;
+    skos:definition "A self-governing geopolitical unit which forms part of a wider geopolitical unit that is recognized as a country."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:State .
+
+City
+
+jlho-skos:Concept_City rdf:type skos:Concept ;
+    skos:prefLabel "City"@en ;
+    skos:definition "An urban administrative division having corporate status and usually powers of self-government or jurisdiction."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:City .
+
+Region
+
+jlho-skos:Concept_Region rdf:type skos:Concept ;
+    skos:prefLabel "Region"@en ;
+    skos:definition "An area of land that has common features."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Region .
+
+Territory
+
+jlho-skos:Concept_Territory rdf:type skos:Concept ;
+    skos:prefLabel "Territory"@en ;
+    skos:definition "A geographic area, typically considered an area of special geopolitical interest."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Territory .
+
+Addressing/Contact Concepts
+
+jlho-skos:Concept_EmailAddress rdf:type skos:Concept ;
+    skos:prefLabel "Email Address"@en ;
+    skos:definition "An email address identifies an email box to which messages are delivered."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:EmailAddress .
+
+jlho-skos:Concept_IPAddress rdf:type skos:Concept ;
+    skos:prefLabel "IP Address"@en ;
+    skos:definition "A unique string of characters that identifies each computer using the Internet Protocol to communicate over a network."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:IPAddress .
+
+Time & Date Concepts
+
+jlho-skos:Concept_Time rdf:type skos:Concept ;
+    skos:prefLabel "Time"@en ;
+    skos:definition "A point in time, duration or method of measuring the passage of time."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Time .
+
+jlho-skos:Concept_TimeInstant rdf:type skos:Concept ;
+    skos:prefLabel "Time Instant"@en ;
+    skos:definition "A finite segment of time, with no extent or duration."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:TimeInstant .
+
+jlho-skos:Concept_TimeInterval rdf:type skos:Concept ;
+    skos:prefLabel "Time Interval"@en ;
+    skos:definition "A finite segment of time, with an extent or duration."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:TimeInterval .
+
+jlho-skos:Concept_Date rdf:type skos:Concept ;
+    skos:prefLabel "Date"@en ;
+    skos:definition "A particular day, month and year when a given event occurred or will occur."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Date .
+
+jlho-skos:Concept_DateTime rdf:type skos:Concept ;
+    skos:prefLabel "Date Time"@en ;
+    skos:definition "A time point including a date and a tim, optionally including a time zone offset."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:DateTime .
+
+jlho-skos:Concept_DatePeriod rdf:type skos:Concept ;
+    skos:prefLabel "Date Period"@en ;
+    skos:definition "A time span over one or more calendar days."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:DatePeriod .
+
+Events, Activities & Occasions
+
+jlho-skos:Concept_Event rdf:type skos:Concept ;
+    skos:prefLabel "Event"@en ;
+    skos:definition "Something that happens or occurs."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Event .
+
+jlho-skos:Concept_Occasion rdf:type skos:Concept ;
+    skos:prefLabel "Occasion"@en ;
+    skos:definition "An event taking place at a certain point in time and involving the participation of people."@en ;
+    skos:inScheme https://semantic-data.jlh.com/jlh/jlho-skos ;
+    skos:exactMatch jlho:Occasion .
+
+jlho-skos:Concept_Activity rdf:type skos:Concept ;
+    skos:prefLabel "Activity"@en ;
+    skos:definitio
+
+@prefix skos: [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) .
+@prefix jlho: [https://semantic-data.jlh.com/jlh/jlho#](https://semantic-data.jlh.com/jlh/jlho#) .
+@prefix rdf: [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) .
+@prefix xsd: [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) .
+
+# SKOS Concept Scheme for the C Company Core Ontology
+
+[https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) rdf:type skos:ConceptScheme ;
+skos:prefLabel "C Company Core Ontology — Conceptual Glossary"@en ;
+skos:definition "A SKOS concept scheme representing human-readable glossary terms aligned to the coreo ontology classes."@en .
+
+#################################################################
+
+# Pattern: For each class in coreo, create a skos:Concept with
+
+# - skos:prefLabel (from jlhao:prefLabel)
+
+# - skos:definition (from jlhao:definition)
+
+# - skos:inScheme referring to the concept scheme above
+
+# - skos:exactMatch pointing to the corresponding OWL class URI
+
+#################################################################
+
+### Entity
+
+jlho:Concept_Entity rdf:type skos:Concept ;
+skos:prefLabel "Entity"@en ;
+skos:definition "Something with a distinct and independent existence."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Entity .
+
+### Person
+
+jlho:Concept_Person rdf:type skos:Concept ;
+skos:prefLabel "Person"@en ;
+skos:definition "A person or an entity with human qualities."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Person .
+
+### Organization
+
+jlho:Concept_Organization rdf:type skos:Concept ;
+skos:prefLabel "Organization"@en ;
+skos:definition "A framework of authority within which a person, persons, or groups of people act, or are designated to act, towards some purpose."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Organization .
+
+### Company
+
+jlho:Concept_Company rdf:type skos:Concept ;
+skos:prefLabel "Company"@en ;
+skos:definition "An organization that produces or sells goods or services in order to make a profit."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Company .
+
+### Company Unit
+
+jlho:Concept_CompanyUnit rdf:type skos:Concept ;
+skos:prefLabel "Company Unit"@en ;
+skos:definition "A distinct part, segment, or entity within a larger company."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:CompanyUnit .
+
+### Organization Member
+
+jlho:Concept_OrganizationMember rdf:type skos:Concept ;
+skos:prefLabel "Organization Member"@en ;
+skos:definition "Entity (person or organization) that has a membership role with respect to some organization."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:OrganizationMember .
+
+### Role
+
+jlho:Concept_Role rdf:type skos:Concept ;
+skos:prefLabel "Role"@en ;
+skos:definition "A function assumed or part played by a thing in a particular situation."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Role .
+
+### Person Role
+
+jlho:Concept_PersonRole rdf:type skos:Concept ;
+skos:prefLabel "Person Role"@en ;
+skos:definition "A function assumed or part played by a person."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:PersonRole .
+
+### Organization Role
+
+jlho:Concept_OrganizationRole rdf:type skos:Concept ;
+skos:prefLabel "Organization Role"@en ;
+skos:definition "A function assumed or part played by an organization."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:OrganizationRole .
+
+### Identifier
+
+jlho:Concept_Identifier rdf:type skos:Concept ;
+skos:prefLabel "Identifier"@en ;
+skos:definition "Something, such as an ID or code, that identifies something."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Identifier .
+
+### Unique Identifier
+
+jlho:Concept_UniqueIdentifier rdf:type skos:Concept ;
+skos:prefLabel "Unique Identifier"@en ;
+skos:definition "Something, such as an ID or code, that uniquely identifies something."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:UniqueIdentifier .
+
+### Internal ID
+
+jlho:Concept_InternalID rdf:type skos:Concept ;
+skos:prefLabel "Internal ID"@en ;
+skos:definition "A unique numeric identifier assigned to a record, used for internal referencing and management."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:InternalID .
+
+### Location
+
+jlho:Concept_Location rdf:type skos:Concept ;
+skos:prefLabel "Location"@en ;
+skos:definition "A particular place or position."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Location .
+
+### Physical Location
+
+jlho:Concept_PhysicalLocation rdf:type skos:Concept ;
+skos:prefLabel "Physical Location"@en ;
+skos:definition "A specific place where an object, person, or entity is situated in the physical world."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:PhysicalLocation .
+
+### Geographic Location
+
+jlho:Concept_GeographicLocation skos:narrower jlho:Concept_Country ;
+jlho:Concept_GeographicLocation rdf:type skos:Concept ;
+skos:prefLabel "Geographic Location"@en ;
+skos:definition "A specific place, described by its position and features."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:GeographicLocation .
+
+### Address
+
+jlho:Concept_Address rdf:type skos:Concept ;
+skos:prefLabel "Address"@en ;
+skos:definition "The particulars of the place where someone lives or an organization is situated."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Address .
+
+### Country
+
+jlho:Concept_Country skos:broader jlho:Concept_GeographicLocation ;
+skos:narrower jlho:Concept_State ;
+jlho:Concept_Country rdf:type skos:Concept ;
+skos:prefLabel "Country"@en ;
+skos:definition "A geopolitical entity representing a distinct territorial body or political entity or dependent territory."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Country .
+
+### State
+
+jlho:Concept_State skos:broader jlho:Concept_Country ;
+skos:narrower jlho:Concept_City ;
+jlho:Concept_State rdf:type skos:Concept ;
+skos:prefLabel "State"@en ;
+skos:definition "A self-governing geopolitical unit which forms part of a wider geopolitical unit that is recognized as a country."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:State .
+
+### City
+
+jlho:Concept_City skos:broader jlho:Concept_State ;
+jlho:Concept_City rdf:type skos:Concept ;
+skos:prefLabel "City"@en ;
+skos:definition "An urban administrative division having corporate status and usually powers of self-government or jurisdiction."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:City .
+
+### Region
+
+jlho:Concept_Region rdf:type skos:Concept ;
+skos:prefLabel "Region"@en ;
+skos:definition "An area of land that has common features."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Region .
+
+### Territory
+
+jlho:Concept_Territory rdf:type skos:Concept ;
+skos:prefLabel "Territory"@en ;
+skos:definition "A geographic area, typically considered an area of special geopolitical interest."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Territory .
+
+### Addressing/Contact Concepts
+
+jlho:Concept_EmailAddress rdf:type skos:Concept ;
+skos:prefLabel "Email Address"@en ;
+skos:definition "An email address identifies an email box to which messages are delivered."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:EmailAddress .
+
+jlho:Concept_IPAddress rdf:type skos:Concept ;
+skos:prefLabel "IP Address"@en ;
+skos:definition "A unique string of characters that identifies each computer using the Internet Protocol to communicate over a network."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:IPAddress .
+
+### Time & Date Concepts
+
+jlho:Concept_Time rdf:type skos:Concept ;
+skos:prefLabel "Time"@en ;
+skos:definition "A point in time, duration or method of measuring the passage of time."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Time .
+
+jlho:Concept_TimeInstant rdf:type skos:Concept ;
+skos:prefLabel "Time Instant"@en ;
+skos:definition "A finite segment of time, with no extent or duration."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:TimeInstant .
+
+jlho:Concept_TimeInterval rdf:type skos:Concept ;
+skos:prefLabel "Time Interval"@en ;
+skos:definition "A finite segment of time, with an extent or duration."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:TimeInterval .
+
+jlho:Concept_Date rdf:type skos:Concept ;
+skos:prefLabel "Date"@en ;
+skos:definition "A particular day, month and year when a given event occurred or will occur."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Date .
+
+jlho:Concept_DateTime rdf:type skos:Concept ;
+skos:prefLabel "Date Time"@en ;
+skos:definition "A time point including a date and a time, optionally including a time zone offset."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:DateTime .
+
+jlho:Concept_DatePeriod rdf:type skos:Concept ;
+skos:prefLabel "Date Period"@en ;
+skos:definition "A time span over one or more calendar days."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:DatePeriod .
+
+### Events, Activities & Occasions
+
+jlho:Concept_Event rdf:type skos:Concept ;
+skos:prefLabel "Event"@en ;
+skos:definition "Something that happens or occurs."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Event .
+
+jlho:Concept_Occasion rdf:type skos:Concept ;
+skos:prefLabel "Occasion"@en ;
+skos:definition "An event taking place at a certain point in time and involving the participation of people."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Occasion .
+
+jlho:Concept_Activity rdf:type skos:Concept ;
+skos:prefLabel "Activity"@en ;
+skos:definition "An action or sequence of actions organized towards a specific goal."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Activity .
+
+jlho:Concept_Process rdf:type skos:Concept ;
+skos:prefLabel "Process"@en ;
+skos:definition "A process is a set of interrelated or interacting steps or activities which transforms inputs into outputs."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Process .
+
+jlho:Concept_Project rdf:type skos:Concept ;
+skos:prefLabel "Project"@en ;
+skos:definition "An individual or collaborative enterprise that is carefully planned to achieve a particular aim."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Project .
+
+jlho:Concept_Campaign rdf:type skos:Concept ;
+skos:prefLabel "Campaign"@en ;
+skos:definition "A planned and coordinated effort, typically composed of a series of activities, to achieve a goal."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Campaign .
+
+jlho:Concept_Meeting rdf:type skos:Concept ;
+skos:prefLabel "Meeting"@en ;
+skos:definition "An occurance of persons assembling for a specific purpose."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Meeting .
+
+jlho:Concept_Observation rdf:type skos:Concept ;
+skos:prefLabel "Observation"@en ;
+skos:definition "An act or instance of noticing or perceiving."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Observation .
+
+### Measures & Measurements
+
+jlho:Concept_Measure rdf:type skos:Concept ;
+skos:prefLabel "Measure"@en ;
+skos:definition "Something that can be observed and involves a measurement."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Measure .
+
+jlho:Concept_Measurement rdf:type skos:Concept ;
+skos:prefLabel "Measurement"@en ;
+skos:definition "The size, length, or amount of something, as established by measuring."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Measurement .
+
+jlho:Concept_Indicator rdf:type skos:Concept ;
+skos:prefLabel "Indicator"@en ;
+skos:definition "A measurement or value which gives you an idea of what something is like."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Indicator .
+
+### Material / Product / Ingredient
+
+jlho:Concept_Material rdf:type skos:Concept ;
+skos:prefLabel "Material"@en ;
+skos:definition "A physical thing that is used, consumed, transformed, or produced in the supply chain."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Material .
+
+jlho:Concept_Product rdf:type skos:Concept ;
+skos:prefLabel "Product"@en ;
+skos:definition "Either a service or a manufactured good sold to another party."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Product .
+
+jlho:Concept_Ingredient rdf:type skos:Concept ;
+skos:prefLabel "Ingredient"@en ;
+skos:definition "A processed or raw material intentionally combined or included in product formulation."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Ingredient .
+
+jlho:Concept_Substance rdf:type skos:Concept ;
+skos:prefLabel "Substance"@en ;
+skos:definition "A basic physical matter with consistent properties."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Substance .
+
+jlho:Concept_Mixture rdf:type skos:Concept ;
+skos:prefLabel "Mixture"@en ;
+skos:definition "A combination of two or more substances that are physically combined but not chemically bonded."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Mixture .
+
+jlho:Concept_ChemicalSubstance rdf:type skos:Concept ;
+skos:prefLabel "Chemical Substance"@en ;
+skos:definition "A form of matter with a specific chemical composition and structure."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:ChemicalSubstance .
+
+jlho:Concept_BiologicalSubstance rdf:type skos:Concept ;
+skos:prefLabel "Biological Substance"@en ;
+skos:definition "A material produced by or derived from living organisms."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BiologicalSubstance .
+
+### Equipment / Tool / Vehicle / Asset
+
+jlho:Concept_Equipment rdf:type skos:Concept ;
+skos:prefLabel "Equipment"@en ;
+skos:definition "An implement used in an operation or activity."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Equipment .
+
+jlho:Concept_Tool rdf:type skos:Concept ;
+skos:prefLabel "Tool"@en ;
+skos:definition "A device or implement, used to carry out a particular function."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Tool .
+
+jlho:Concept_Vehicle rdf:type skos:Concept ;
+skos:prefLabel "Vehicle"@en ;
+skos:definition "A thing used for transporting people or goods."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Vehicle .
+
+jlho:Concept_Asset rdf:type skos:Concept ;
+skos:prefLabel "Asset"@en ;
+skos:definition "A tangible, physical object used to support operation in production, storage, transportation, or office settings."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Asset .
+
+### Documents & Governance
+
+jlho:Concept_Document rdf:type skos:Concept ;
+skos:prefLabel "Document"@en ;
+skos:definition "A piece of written, printed, or electronic matter that provides information or evidence or that serves as an official record."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Document .
+
+jlho:Concept_GovernanceDocument rdf:type skos:Concept ;
+skos:prefLabel "Governance Document"@en ;
+skos:definition "A document or class of documents used to establish and maintain order, consistency, and compliance within an organization or system."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:GovernanceDocument .
+
+jlho:Concept_LegalDocument rdf:type skos:Concept ;
+skos:prefLabel "Legal Document"@en ;
+skos:definition "A document specifying the terms of, or provides evidence for, an agreement, attestation, certification, conditions, permissions, and/or decisions of legal persons, government entities, or courts of law."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:LegalDocument .
+
+jlho:Concept_Manual rdf:type skos:Concept ;
+skos:prefLabel "Manual"@en ;
+skos:definition "A small book giving information or instructions."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Manual .
+
+jlho:Concept_UserGuide rdf:type skos:Concept ;
+skos:prefLabel "User Guide"@en ;
+skos:definition "A document that provides instructions and information on how to use a product or service."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:UserGuide .
+
+jlho:Concept_ProceduresDocument rdf:type skos:Concept ;
+skos:prefLabel "Procedures Document"@en ;
+skos:definition "A document containing one or more procedures."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:ProceduresDocument .
+
+jlho:Concept_GuidelinesDocument rdf:type skos:Concept ;
+skos:prefLabel "Guidelines Document"@en ;
+skos:definition "A document containing one or more guidelines."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:GuidelinesDocument .
+
+### Standards, Schemes & Classification
+
+jlho:Concept_Standard rdf:type skos:Concept ;
+skos:prefLabel "Standard"@en ;
+skos:definition "A specific, measurable requirement that must be met to ensure quality, consistency, and compliance with policies and procedures."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Standard .
+
+jlho:Concept_ClassificationScheme rdf:type skos:Concept ;
+skos:prefLabel "Classification Scheme"@en ;
+skos:definition "A system or plan for arranging or organizing entities into categories."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:ClassificationScheme .
+
+jlho:Concept_Scheme rdf:type skos:Concept ;
+skos:prefLabel "Scheme"@en ;
+skos:definition "A designed plan, arrangement, or method for organizing or applying something."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Scheme .
+
+jlho:Concept_Framework rdf:type skos:Concept ;
+skos:prefLabel "Framework"@en ;
+skos:definition "A conceptual structure that provides guidelines, constraints, or high-level organization for how things should be done."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Framework .
+
+### Business Concepts
+
+jlho:Concept_BusinessDomain rdf:type skos:Concept ;
+skos:prefLabel "Business Domain"@en ;
+skos:definition "A company function or sub-function specific to a company enterprise or business group."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BusinessDomain .
+
+jlho:Concept_BusinessFunction rdf:type skos:Concept ;
+skos:prefLabel "Business Function"@en ;
+skos:definition "A specific, defined area of work within a business, characterized by a group of related activities and responsibilities."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BusinessFunction .
+
+jlho:Concept_BusinessEnterprise rdf:type skos:Concept ;
+skos:prefLabel "Business Enterprise"@en ;
+skos:definition "An organization group of a company that represents a specific line of business, usually responsible for its own profit and loss."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BusinessEnterprise .
+
+jlho:Concept_BusinessGroup rdf:type skos:Concept ;
+skos:prefLabel "Business Group"@en ;
+skos:definition "A smaller, specialized unit within a company or sub-unit of a company."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BusinessGroup .
+
+jlho:Concept_BusinessOperation rdf:type skos:Concept ;
+skos:prefLabel "Business Operation"@en ;
+skos:definition "The core, day-to-day activities that a company undertakes to generate revenue and achieve its objectives."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BusinessOperation .
+
+jlho:Concept_BusinessStrategy rdf:type skos:Concept ;
+skos:prefLabel "Business Strategy"@en ;
+skos:definition "A comprehensive plan outlining how a company or business unit will achieve its long-term goals and maintain a competitive advantage."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:BusinessStrategy .
+
+### Knowledge & Conceptual Terms
+
+jlho:Concept_Concept rdf:type skos:Concept ;
+skos:prefLabel "Concept"@en ;
+skos:definition "An idea or general notion about a particular subject."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Concept .
+
+jlho:Concept_Category rdf:type skos:Concept ;
+skos:prefLabel "Category"@en ;
+skos:definition "A class or division of people or things regarded as having particular shared characteristics."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Category .
+
+jlho:Concept_Classification rdf:type skos:Concept ;
+skos:prefLabel "Categorization"@en ;
+skos:definition "A grouping of items based on shared traits, creating a broader, flexible set of groupings that may overlap."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Categorization .
+
+### Measurement & Unit Concepts (placeholder unit concept)
+
+jlho:Concept_Quantity rdf:type skos:Concept ;
+skos:prefLabel "Quantity"@en ;
+skos:definition "The measurement of an observable property of a particular object, event, or physical system."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Quantity .
+
+### Safety, Hazard & Environment
+
+jlho:Concept_Hazard rdf:type skos:Concept ;
+skos:prefLabel "Hazard"@en ;
+skos:definition "A process, phenomenon or human activity that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Hazard .
+
+jlho:Concept_Disaster rdf:type skos:Concept ;
+skos:prefLabel "Disaster"@en ;
+skos:definition "A grievous event, often occurring suddenly and causing loss of life, damage or hardship."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Disaster .
+
+jlho:Concept_Climate rdf:type skos:Concept ;
+skos:prefLabel "Climate"@en ;
+skos:definition "Climate is how the atmosphere behaves over relatively longer periods of time."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Climate .
+
+jlho:Concept_Weather rdf:type skos:Concept ;
+skos:prefLabel "Weather"@en ;
+skos:definition "Weather describes conditions of the atmosphere over a short period of time."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Weather .
+
+### Versioning & Lifecycle
+
+jlho:Concept_Version rdf:type skos:Concept ;
+skos:prefLabel "Version"@en ;
+skos:definition "A specific edition or form of something."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Version .
+
+jlho:Concept_Lifecycle rdf:type skos:Concept ;
+skos:prefLabel "Lifecycle"@en ;
+skos:definition "A series of stages in form and functional activity."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Lifecycle .
+
+### Digital & Web Concepts
+
+jlho:Concept_DigitalLocation rdf:type skos:Concept ;
+skos:prefLabel "Digital Location"@en ;
+skos:definition "An electronic (non-physical) address used for websites, apps, platforms, software, etc."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:DigitalLocation .
+
+jlho:Concept_URL rdf:type skos:Concept ;
+skos:prefLabel "URL"@en ;
+skos:definition "Uniform Resource Locator - a specific type of URI that provides the web address or location of a resource on the internet."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:URL .
+
+jlho:Concept_URI rdf:type skos:Concept ;
+skos:prefLabel "URI"@en ;
+skos:definition "Uniform Resource Identifier - a string of characters that identifies a specific resource."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:URI .
+
+### Miscellaneous / Utility Concepts
+
+jlho:Concept_List rdf:type skos:Concept ;
+skos:prefLabel "List"@en ;
+skos:definition "A collection containing a finite, ordered set of related items."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:List .
+
+jlho:Concept_Collection rdf:type skos:Concept ;
+skos:prefLabel "Collection"@en ;
+skos:definition "Grouping of things that have some shared significance."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Collection .
+
+jlho:Concept_Set rdf:type skos:Concept ;
+skos:prefLabel "Set"@en ;
+skos:definition "An assembly of distinct objects or concepts considered as a whole."@en ;
+skos:inScheme [https://semantic-data.jlh.com/jlh/jlho-skos](https://semantic-data.jlh.com/jlh/jlho-skos) ;
+skos:exactMatch jlho:Set .
+
+#################################################################
+
+# End of SKOS concept mappings - extend as needed
+
+#################################################################
+
+# Notes:
+
+# - Each skos:Concept URI above uses a 'jlho:Concept_<Label>' pattern for readability.
+
+# - skos:exactMatch links the concept to the OWL class (jlho:ClassName) so tools can align glossary terms with the ontology.
+
+# - You can extend the scheme by adding skos:broader/narrower, skos:related, skos:altLabel, and language variants as needed.
+
+# - Consider generating a SKOS-XL label set if you need richer label metadata (provenance, dates, authorship).

@@ -1,0 +1,16 @@
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill $"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc24-57192-34> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill_24 57192 34"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill&"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill. *"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargïll"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#altLabel> "CargillCompany"@en <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc345> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://semantic-data.jlh.com/im/jlh/jlho#Company> <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#altLabel> "嘉吉"@zh <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc345> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill#345"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill/"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://semantic-data.jlh.com/im/jlh/jlho#Company> <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc24-57192-34> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://semantic-data.jlh.com/im/jlh/jlho#Company> <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companyc> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "CÁrgill"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companycire4357> <https://semantic-data.jlh.com/im/jlh/jlhao#prefLabel> "Cargill-ire4357*&^*"@en-us <https://semantic-data.jlh.com/kg/jlh/jlhg> .
+<https://semantic-data.jlh.com/core/jlho/company/companycire4357> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://semantic-data.jlh.com/im/jlh/jlho#Company> <https://semantic-data.jlh.com/kg/jlh/jlhg> .
