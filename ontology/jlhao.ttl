@@ -1,0 +1,413 @@
+@prefix : <https://semantic-data.jlh.com/im/jlhao#> .
+@prefix coreao: <https://semantic-data.jlh.com/im/jlhao#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://semantic-data.jlh.com/im/jlhao> rdf:type owl:Ontology ;
+	coreao:title "Company Core Annotation Ontology"@en-us ;
+	coreao:description "Company core ontology for cross-enterprise annotation concepts"@en-us ;
+	owl:versionInfo "1.0.0" ;
+	coreao:preferredPrefix "coreao" ;
+	coreao:namespaceURI "https://semantic-data.jlh.com/im/jlhao#" ;
+	coreao:createdBy "Janet Hanicak" ;
+	coreao:created "20250627" ;
+	coreao:modifiedBy "Janet Hanicak" ;
+	coreao:modified "20251105" .
+
+##################################################################################################################################
+#    Controlled Vocabulary/Resource Annotation Properties
+#
+##   Typically used to describe an artifact such as a controlled vocabulary, ontology, or other similar resource.
+##################################################################################################################################
+
+# ###  https://semantic-data.jlh.com/im/jlhao#abstract
+# :abstract rdf:type owl:AnnotationProperty ;
+# 	rdfs:subPropertyOf coreao:description ;
+# 	coreao:definition "Summary of the resource."@en-us ;
+# 	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+# 	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+# 	rdfs:label "abstract"@en-us .
+
+# ###  https://semantic-data.jlh.com/im/jlhao#accrualMethod
+# :accrualMethod rdf:type owl:AnnotationProperty ;
+# 	rdfs:subPropertyOf coreao:description ;
+# 	coreao:definition "The method by which items are added to a collection."@en-us ;
+# 	coreao:usageNote "Typically used to describe a controlled vocabulary, ontology or similar resource."@en-us ;
+# 	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+# 	rdfs:label "accrual method"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#contributor
+:contributor rdf:type owl:AnnotationProperty ;
+	coreao:definition "Party that has made contributions to the resource"@en-us ;
+	coreao:usageNote "Typically used to describe a controlled vocabulary, ontology, or similar resource."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	rdfs:label "contributor"@en-us .
+	
+# ###  https://semantic-data.jlh.com/im/jlhao#copyright
+# :copyright rdf:type owl:AnnotationProperty ;
+# 	rdfs:subPropertyOf coreao:rights ;
+# 	coreao:definition "An exclusive legal right, given to an originator or an assignee to print, publish, perform, film, or record literary, artistic, or musical material, and to authorize others to do the same."@en-us ;
+# 	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+# 	rdfs:label "copyright"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#created
+:created rdf:type owl:AnnotationProperty ;
+	coreao:definition "Date on which the resource was first published."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	rdfs:label "created"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#createdBy
+:createdBy rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:contributor ;
+	coreao:definition "Party that originated the resource."@en-us ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	rdfs:label "created by"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#editorialNote
+:editorialNote rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	coreao:definition "Note for an editor, translator, or maintainer of the controlled vocabulary or ontology."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "editorial note"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#issued
+:issued rdf:type owl:AnnotationProperty ;
+	coreao:definition "Production release data of the current version."@en-us ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	rdfs:label "issued"@en-us .
+
+# ###  https://semantic-data.jlh.com/im/jlhao#license
+# :license rdf:type owl:AnnotationProperty ;
+# 	coreao:definition "Legal document giving official permission to do something with the resource."@en-us ;
+# 	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+# 	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+# 	rdfs:label "license"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#modified
+:modified rdf:type owl:AnnotationProperty ;
+	coreao:definition "Date on which the resource was modified."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	rdfs:label "modified"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#modifiedBy
+:modifiedBy rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:contributor ;
+	coreao:definition "Party that originated the resource."@en-us ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	rdfs:label "modified by"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#namespaceURI
+:namespaceURI rdf:type owl:AnnotationProperty ;
+	coreao:definition "Unique identifier for resource."@en-us ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	coreao:adaptedFrom "http://purl.org/vocab/vann/" ;
+	rdfs:label "namespace URI"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#preferredPrefix
+:preferredPrefix rdf:type owl:AnnotationProperty ;
+	coreao:definition "The prefix that the publisher prefers is used to refer to resource."@en-us ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	coreao:adaptedFrom "http://purl.org/vocab/vann/" ;
+	rdfs:label "preferred prefix"@en-us .
+	
+# ###  https://semantic-data.jlh.com/im/jlhao#publisher
+# :publisher rdf:type owl:AnnotationProperty ;
+# 	coreao:definition "Primary party responsible for making the resource available."@en-us ;
+# 	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+# 	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+# 	rdfs:label "publisher"@en-us .
+	
+# ###  https://semantic-data.jlh.com/im/jlhao#rights
+# :rights rdf:type owl:AnnotationProperty ;
+# 	coreao:definition "Provides information about rights held in and over the resource."@en-us ;
+# 	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+# 	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+# 	rdfs:label "rights"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#title
+:title rdf:type owl:AnnotationProperty ;
+	coreao:definition "Formal name given to the resource (artifact, such as a controlled vocabulary or ontology)."@en-us ;
+	coreao:usageNote "Typically used for a controlled vocabulary, ontology or similar resource."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	rdfs:label "title"@en-us .
+
+##################################################################################################################################
+#    General Annotation Properties
+#
+##   Used to describe a class declaration, an instance of a class or an artifact such as a
+##   controlled vocabulary, ontology, or other similar resource.
+##################################################################################################################################
+	
+###  https://semantic-data.jlh.com/im/jlhao#abbreviation
+:abbreviation rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:synonym ;
+	coreao:definition "Shortened form of a term that denotes the same concept."@en-us ;
+	coreao:note "Abbreviations can be created by removing individual words, or can be acronyms, initialisms, or clipped terms."@en-us ;
+	coreao:exampleValues "Management: mgmt; Chemical Symbols: H, O, Mg; Units of Measure: Km, Kg, G"@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "abbreviation"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#acronym
+:acronym rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:abbreviation ;
+	coreao:definition "A type of abbreviation made from the first letters of each word in a phrase and pronounced as a single word."@en-us ;
+	coreao:exampleValues "NASA, ISO, GATT, UNESCO, UNICEF"@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "acronym"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#adaptedFrom
+:adaptedFrom rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:source ;
+	coreao:definition "A document or other source used as a reference; the range for this annotation can be a string, URI, or citation."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "adapted from"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#altLabel
+:altLabel rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf rdfs:label ;
+	coreao:definition "Alternative tag for an instance or resource."@en-us ;
+	coreao:usageNote "Alternative labels are useful when generating or creating human-readable representations of a knowledge organization system."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "alternative label"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#associatedDatatypeProperties
+:associatedDatatypeProperties rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:associatedProperties ;
+	coreao:definition "Datatype properties either specifically created to use or suggested to use with a class instance."@en-us ;
+	rdfs:label "associated datatype properties"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#associatedObjectProperties
+:associatedObjectProperties rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:associatedProperties ;
+	coreao:definition "Object properties either specifically created to use or suggested to use with a class instance."@en-us ;
+	rdfs:label "associated object properties"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#associatedProperties
+:associatedProperties rdf:type owl:AnnotationProperty ;
+	coreao:definition "Properties either specifically created to use or suggested to use with a class instance."@en-us ;
+	rdfs:label "associated properties"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#changeNote
+:changeNote rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Note describing a modification to an instance or resource."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "change note"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#definition
+:definition rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Formal statement of the meaning of an instance or resource."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "definition"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlhao#description
+:description rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Account of the instance or resource."@en-us ;
+	coreao:usageNote "Description should be used to explain or represent what something is, not define it."@en-us ;
+	coreao:example "Description can include a table of contents, a graphical representation or free-text account of the instance or resource."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	rdfs:label "description"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#directSource
+:directSource rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:source ;
+	coreao:definition "Quoted reference for the instance or resource; the range for this annotation can be a string, URI, or bibliographic citation."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "direct source"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#example
+:example rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Illustration of the use of some instance or resource."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "example"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#exampleValues
+:exampleValues rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Example instance values for an instance or resource."@en-us ;
+	rdfs:label "example values"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#explanatoryNote
+:explanatoryNote rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Note that provides additional explanatory material for an instance or resource."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "explanatory note"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#hiddenLabel
+:hiddenLabel rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf rdfs:label ;
+	coreao:definition "A label for an instance or resource, in a given language, not accessible by a user."@en-us ;
+	coreao:usageNote "Hidden labels are useful when a user is interacting with a knowledge organization system via a text-based search function. The user may, for example, enter mis-spelled words when trying to find a relevant concept. If the mis-spelled query can be matched against a hidden label, the user will be able to find the relevant concept, but the hidden label won't otherwise be visible to the user (so further mistakes aren't encouraged)."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "hidden label"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#logicalDefinition
+:logicalDefinition rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:definition ;
+	coreao:definition "Definition in the form of a formal expression, such as the mathematical or logic representation, for the instance or resource."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "logical definition"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#note
+:note rdf:type owl:AnnotationProperty ;
+	coreao:definition "General remark for any purpose."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "note"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#prefLabel
+:prefLabel rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf rdfs:label ;
+	coreao:definition "Canonical label for an instance or resource with a language tag of en-us."@en-us ;
+	coreao:usageNote "Preferred labels are useful when generating or creating human-readable representations of a knowledge organization system."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "preferred label"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#references
+:references rdf:type owl:AnnotationProperty ;
+	coreao:definition "Indicates a related instance or resource that is referenced, cited, or otherwise pointed to by the described item."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	rdfs:label "references"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#requiredDatatypeProperties
+:requiredDatatypeProperties rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:requiredProperties ;
+	coreao:definition "Datatype properties required tfor a class instance."@en-us ;
+	rdfs:label "required datatype properties"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#requiredObjectProperties
+:requiredObjectProperties rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:requiredProperties ;
+	coreao:definition "Object properties required for a class instance."@en-us ;
+	rdfs:label "required object properties"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#requiredProperties
+:requiredProperties rdf:type owl:AnnotationProperty ;
+	coreao:definition "Properties required for a class instance."@en-us ;
+	rdfs:label "required properties"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#scopeNote
+:scopeNote rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Note that helps to clarify the meaning of something within the context of the intended use of the instance or resource."@en-us ;
+	coreao:adaptedFrom "http://www.w3.org/2004/02/skos/core" ;
+	rdfs:label "scope note"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#source
+:source rdf:type owl:AnnotationProperty ;
+	coreao:definition "Related instance or resource from which the described item is derived."@en-us ;
+	coreao:explanatoryNote "The intent is to provide a user with a reference as to how the thing being annotated was derived or arrived at. The source can be a URL to a standard, common dictionary (e.g., Collins, Merriam-Webster, Oxford), a formal reference such as an ISO standard, or similar reference. Or it can be a short description of a source from which the entity being annotated was derived."@en-us ;
+	coreao:adaptedFrom "http://purl.org/dc/terms/" ;
+	rdfs:label "source"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#symbol
+:symbol rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:synonym ;
+	coreao:definition "Abbreviation that is a design or mark, or other non-alpha-numeric character(s) conventionally used to represent something, such as a currency or mathematical sign or operator."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "symbol"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#synonym
+:synonym rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:alternativeLabel ;
+	coreao:definition "Designation that can be substituted for the primary representation of something."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "synonym"@en-us .
+	
+###  https://semantic-data.jlh.com/im/jlhao#usageNote
+:usageNote rdf:type owl:AnnotationProperty ;
+	rdfs:subPropertyOf coreao:note ;
+	coreao:definition "Note that provides information about how a given instance or resource is used or may be extended."@en-us ;
+	coreao:adaptedFrom "https://www.omg.org/spec/Commons/AnnotationVocabulary/" ;
+	rdfs:label "usage note"@en-us .
+
+##################################################################################################################################
+#    Inherited Annotation Properties
+#
+##   Inherited from owl or rdfs vocabularies.
+##   Will include the line # DO NOT USE if there is a similar property defined in this document.
+##################################################################################################################################
+
+# owl:backwardCompatibleWith
+    # NOTE: owl:backwardCompatibleWith is an instance of owl:OntologyProperty.
+    # An owl:backwardCompatibleWith statement contains a reference to another ontology.
+    # This identifies the specified ontology as a prior version of the containing ontology, and further indicates that it is backward compatible with it.
+    # In particular, this indicates that all identifiers from the previous version have the same intended interpretations in the new version.
+    # Thus, it is a hint to document authors that they can safely change their documents to commit to the new version (by simply updating namespace declarations and owl:imports statements to refer to the URL of the new version).
+    # If owl:backwardCompatibleWith is not declared for two versions, then compatibility should not be assumed.
+    # owl:backwardCompatibleWith is a built-in OWL property with the class owl:Ontology as its domain and range.
+
+# owl:deprecated
+    # An annotation with the owl:deprecated annotation property and the value equal to "true"^^xsd:boolean can be used to specify that an IRI is deprecated.
+
+# owl:DeprecatedClass
+    # NOTE: owl:DeprecatedClass is a subclass of rdfs:Class
+    # By deprecating a term, it means that the term should not be used in new documents that commit to the ontology.
+    # This allows an ontology to maintain backward-compatibility while phasing out an old vocabulary (thus, it only makes sense to use deprecation in combination with backward compatibility).
+    # As a result, it it easier for old data and applications to migrate to a new version, and thus can increase the level of adoption of the new version.
+    # Example:
+    # <owl:DeprecatedClass rdf:ID="Car">
+    #   <rdfs:comment>Automobile is now preferred</rdfs:comment>
+    #   <owl:equivalentClass rdf:resource="#Automobile"/>
+    #   <!-- note that equivalentClass only means that the classes have the same
+    #        extension, so this DOES NOT lead to the entailment that
+    #        Automobile is of type DeprecatedClass too -->
+    # </owl:DeprecatedClass>
+
+# owl:DeprecatedProperty
+    # NOTE: owl:DeprecatedProperty is a subclass of rdf:Property
+    # By deprecating a term, it means that the term should not be used in new documents that commit to the ontology.
+    # This allows an ontology to maintain backward-compatibility while phasing out an old vocabulary (thus, it only makes sense to use deprecation in combination with backward compatibility).
+    # As a result, it it easier for old data and applications to migrate to a new version, and thus can increase the level of adoption of the new version.
+    # Example:
+    # <owl:DeprecatedProperty rdf:ID="hasDriver">
+    #   <rdfs:comment>inverse property drives is now preferred</rdfs:comment>
+    #   <owl:inverseOf rdf:resource="#drives" />
+    # </owl:DeprecatedProperty>
+
+# owl:incompatibleWith
+    # NOTE: owl:backwardCompatibleWith is an instance of owl:OntologyProperty.
+    # An owl:incompatibleWith statement contains a reference to another ontology.
+    # This indicates that the containing ontology is a later version of the referenced ontology, but is not backward compatible with it.
+    # Essentially, this is for use by ontology authors who want to be explicit that documents cannot upgrade to use the new version without checking whether changes are required.
+    # owl:incompatibleWith is a built-in OWL property with the class owl:Ontology as its domain and range.
+
+# owl:priorVersion
+    # NOTE: owl:priorVersion is an instance of owl:OntologyProperty.
+    # An owl:priorVersion statement contains a reference to another ontology.
+    # This identifies the specified ontology as a prior version of the containing ontology.
+    # This has no meaning in the model-theoretic semantics other than that given by the RDF(S) model theory. However, it may be used by software to organize ontologies by versions.
+    # owl:priorVersion is a built-in OWL property with the class owl:Ontology as its domain and range.
+
+# owl:versionInfo
+    # NOTE: owl:versionInfo is an instance of owl:AnnotationProperty.
+    # owl:versionInfo annotation property can be used to provide an IRI with a string that describes the IRI's version.
+    # An owl:versionInfo statement generally has as its object a string giving information about this version, for example RCS/CVS keywords.
+    # Although this property is typically used to make statements about ontologies, it may be applied to any OWL construct.
+    # For example, one could attach a owl:versionInfo statement to an OWL class.
+
+# rdfs:comment
+	# DO NOT USE - similar property: coreao:description
+    # rdfs:comment annotation property can be used to provide an IRI with a human-readable comment.
+
+# rdfs:isDefinedBy
+	# DO NOT USE - similar property: coreao:source or coreao:adaptedFrom
+    # rdfs:isDefinedBy annotation property can be used to provide an IRI with another IRI such that the latter provides information about the definition of the former;
+    # the way in which this information is provided is not described by this specification.
+
+# rdfs:label
+    # rdfs:label annotation property can be used to provide an IRI with a human-readable label.
+
+# rdfs:seeAlso
+	# DO NOT USE - similar property: coreao:source or coreao:adaptedFrom
+    # rdfs:seeAlso annotation property can be used to provide an IRI with another IRI such that the latter provides additional information about the former.

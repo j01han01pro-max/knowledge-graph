@@ -1,0 +1,3292 @@
+@prefix : <https://semantic-data.jlh.com/im/jlho#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix jlho: <https://semantic-data.jlh.com/im/jlho#> .
+@prefix jlhao: <https://semantic-data.jlh.com/im/jlhao#> .
+@base <https://semantic-data.jlh.com/im/jlho#> .
+
+<https://semantic-data.jlh.com/im/jlho> rdf:type owl:Ontology ;
+                                               owl:imports <https://semantic-data.jlh.com/im/jlhao> ;
+                                               owl:versionInfo "1.0.0"@en-us ;
+                                               jlhao:created "20250530"@en-us ;
+                                               jlhao:createdBy "Janet Hanicak"@en-us ;
+                                               jlhao:description "Company core ontology for cross-organization concepts"@en-us ;
+                                               jlhao:modified "20250909"@en-us ;
+                                               jlhao:modifiedBy "Janet Hanicak"@en-us ;
+                                               jlhao:namespaceURI "https://semantic-data.jlh.com/im/jlho#"@en-us ;
+                                               jlhao:preferredPrefix "jlho"@en-us ;
+                                               jlhao:title "Company Core Ontology"@en-us .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://semantic-data.jlh.com/im/jlhao#acronym
+jlhao:acronym rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#altLabel
+jlhao:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#associatedProperties
+jlhao:associatedProperties rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#created
+jlhao:created rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#createdBy
+jlhao:createdBy rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#definition
+jlhao:definition rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#description
+jlhao:description rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#example
+jlhao:example rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#exampleValues
+jlhao:exampleValues rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#explanatoryNote
+jlhao:explanatoryNote rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#logicalDefinition
+jlhao:logicalDefinition rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#modified
+jlhao:modified rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#modifiedBy
+jlhao:modifiedBy rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#namespaceURI
+jlhao:namespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#note
+jlhao:note rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#prefLabel
+jlhao:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#preferredPrefix
+jlhao:preferredPrefix rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#requiredProperties
+jlhao:requiredProperties rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#scopeNote
+jlhao:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#source
+jlhao:source rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#synonym
+jlhao:synonym rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#title
+jlhao:title rdf:type owl:AnnotationProperty .
+
+
+###  https://semantic-data.jlh.com/im/jlhao#usageNote
+jlhao:usageNote rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://semantic-data.jlh.com/im/jlho#about
+jlho:about rdf:type owl:ObjectProperty ;
+            jlhao:prefLabel "about"@en-us ;
+            jlhao:definition "Concerning."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#appliesToUOMDimension
+jlho:appliesToUOMDimension rdf:type owl:ObjectProperty ;
+                #   owl:inverseOf jlho:uomDimensionAppliesTo ;
+                # rdfs:domain jlho:UnitOfMeasure ;
+                rdfs:range jlho:Dimension ;
+                jlhao:prefLabel "applies to UOM dimension"@en-us ;
+                jlhao:definition "Relates a unit of measure to a dimension."@en-us ;
+                jlhao:usageNote .
+
+
+###  https://semantic-data.jlh.com/im/jlho#applicableUOMSystem
+jlho:applicableUOMSystem rdf:type owl:ObjectProperty ;
+                rdfs:domain jlho:UnitOfMeasure ;
+                rdfs:range jlho:UnitOfMeasureSystem ;
+                jlhao:prefLabel "applicable unit system"@en-us ;
+                jlhao:definition "Relates a unit of measure to a unit system."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#brandOf
+jlho:brandOf rdf:type owl:ObjectProperty ;
+              owl:inverseOf jlho:hasBrand ;
+                     rdfs:domain jlho:Brand ;
+                     jlhao:prefLabel "brand of"@en-us ;
+                     jlhao:definition "Is a kind, grade or make of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#characterizes
+jlho:characterizes rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf jlho:describes ;
+                    owl:inverseOf jlho:characterizedBy ;
+                    jlhao:prefLabel "characterizes"@en-us ;
+                    jlhao:definition "Provides a discriminating feature or quality of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#classifies
+jlho:classifies rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf jlho:characterizes ;
+                 owl:inverseOf jlho:classifiedBy ;
+                 jlhao:prefLabel "classifies"@en-us ;
+                 jlhao:definition "Arranges in categories according to one or more shared characteristics."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#capabilityOf
+jlho:capabilityOf rdf:type owl:ObjectProperty ;
+                     rdfs:domain jlho:Capability ;
+                     jlhao:prefLabel "capability of"@en-us ;
+                     jlhao:definition "Is an ability, capacity or feature of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#characterizedBy
+jlho:characterizedBy rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf jlho:describedBy ;
+                        jlhao:prefLabel "characterized by"@en-us ;
+                        jlhao:definition "Is distinguished by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#classifiedBy
+jlho:classifiedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:classifies ;
+                     rdfs:subPropertyOf jlho:characterizedBy ;
+                     jlhao:prefLabel "classified by"@en-us ;
+                     jlhao:definition "Is systematically grouped based on characteristics by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#componentOf
+jlho:componentOf rdf:type owl:ObjectProperty ;
+                  owl:inverseOf jlho:hasComponent ;
+                  rdfs:domain jlho:Component ;
+                  jlhao:prefLabel "component of"@en-us ;
+                  jlhao:definition "Is a distinct, separate entity or element that makes up a larger whole."@en-us ;
+                  jlhao:example "A wheel is a component of a car."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#constituentOf
+jlho:constituentOf rdf:type owl:ObjectProperty ;
+                    owl:inverseOf jlho:hasConstituent ;
+                    jlhao:prefLabel "constituent of"@en-us ;
+                    jlhao:definition "Is an essential and formative part of the makeup of something."@en-us ;
+                    jlhao:example "Sugar is a constituent of a cake."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#definedBy
+jlho:definedBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:defines ;
+                    jlhao:prefLabel "defined by"@en-us ;
+                    jlhao:definition "The exact nature or scope is stated by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#describedBy
+jlho:describedBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:describes ;
+                    jlhao:prefLabel "described by"@en-us ;
+                    jlhao:definition "The general nature or description is stated by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#defines
+jlho:defines rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:definedBy ;
+                jlhao:prefLabel "defines"@en-us ;
+                jlhao:definition "State or describe exactly the nature, scope, or meaning of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#definesSpecification
+jlho:definesSpecification rdf:type owl:ObjectProperty ;
+                       rdfs:domain jlho:Entity ;
+                       rdfs:range jlho:Specification ;
+                       jlhao:prefLabel "defines specification"@en-us ;
+                       jlhao:definition "A company, company unit, association, person, etc. creates or defines a specification."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#describes
+jlho:describes rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:describedBy ;
+                jlhao:prefLabel "describes"@en-us ;
+                jlhao:definition "Conveys the nature of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#domainOf
+jlho:domainOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain jlho:Domain ;
+                 jlhao:prefLabel "domain of"@en-us ;
+                 jlhao:definition "Within the specific sphere of activity or knowledge of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#establishesGuideline
+jlho:establishesGuideline rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:Entity ;
+                   rdfs:range jlho:Guideline ;
+                   jlhao:prefLabel "establishes guideline"@en-us ;
+                   jlhao:definition "A company, company unit, association, person, etc. creates or defines a guideline."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#establishesProcedure
+jlho:establishesProcedure rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:Entity ;
+                   rdfs:range jlho:Procedure ;
+                   jlhao:prefLabel "establishes procedure"@en-us ;
+                   jlhao:definition "A company, company unit, association, person, etc. creates or defines a procedure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#establishesProcess
+jlho:establishesProcess rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:Entity ;
+                   rdfs:range jlho:Process ;
+                   jlhao:prefLabel "establishes process"@en-us ;
+                   jlhao:definition "A company, company unit, association, person, etc. creates or defines a process."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasAddress
+jlho:hasAddress rdf:type owl:ObjectProperty ;
+              rdfs:range jlho:Address ;
+              jlhao:prefLabel "has address"@en-us ;
+              jlhao:definition "Has details about a geographical location."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasApplicableUOM
+jlho:hasApplicableUOM rdf:type owl:ObjectProperty ;
+              rdfs:domain jlho:UOMDimension ;
+              rdfs:range jlho:UnitOfMeasure ;
+              jlhao:prefLabel "has applicable UOM"@en-us ;
+              jlhao:definition "Relates a dimension to an applicable unit of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasBillingAddress
+jlho:hasBillingAddress rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf jlho:hasAddress ;
+              rdfs:range jlho:Address ;
+              jlhao:prefLabel "has billing address"@en-us ;
+              jlhao:definition "Has address associated with payment; where invoices or statements are sent."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#hasBrand
+jlho:hasBrand rdf:type owl:ObjectProperty ;
+               owl:inverseOf jlho:brandOf ;
+               rdfs:range jlho:Brand ;
+               jlhao:prefLabel "has brand"@en ;
+               jlhao:definition "Has kind, grade or make of a product or service."@en .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasBusinessEnterprise
+jlho:hasBusinessEnterprise rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf jlho:hasCompanyUnit ;
+                    rdfs:range jlho:BusinessEnterprise ;
+                    jlhao:prefLabel "has business enterprise"@en-us ;
+                    jlhao:definition "Includes an organization enterprise."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasBusinessFunction
+jlho:hasBusinessFunction rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf jlho:hasCompanyUnit ;
+                  rdfs:range jlho:BusinessFunction ;
+                  jlhao:prefLabel "has business function"@en-us ;
+                  jlhao:definition "Includes an organization functional area."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasBusinessGroup
+jlho:hasBusinessGroup rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf jlho:hasCompanyUnit ;
+                       rdfs:range jlho:BusinessGroup ;
+                       jlhao:prefLabel "has business group"@en-us ;
+                       jlhao:definition "Includes a business group."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasBusinessOperation
+jlho:hasBusinessOperation rdf:type owl:ObjectProperty ;
+                           owl:inverseOf jlho:isBusinessOperationOf ;
+                           rdfs:range jlho:BusinessOperation ;
+                           jlhao:prefLabel "has business operation"@en-us ;
+                           jlhao:definition "Includes a business operation."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasCapability
+jlho:hasCapability rdf:type owl:ObjectProperty ;
+                    owl:inverseOf jlho:capabilityOf ;
+                    rdfs:range jlho:Capability ;
+                    jlhao:prefLabel "has capability"@en-us ;
+                    jlhao:definition "Has ability, capacity or feature."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasCompanyUnit
+jlho:hasCompanyUnit rdf:type owl:ObjectProperty ;
+                #  owl:inverseOf jlho:isSubCompanyUnitOf ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:domain jlho:Company ;
+                 rdfs:range jlho:CompanyUnit ;
+                 jlhao:prefLabel "has company unit"@en-us ;
+                 jlhao:definition "Includes a company unit."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasComponent
+jlho:hasComponent rdf:type owl:ObjectProperty ;
+                   rdfs:range jlho:Component ;
+                   jlhao:prefLabel "has component"@en-us ;
+                   jlhao:definition "Includes a distinct, separate entity or element that makes up a larger whole."@en-us ;
+                   jlhao:example "Car has component wheel."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasConstituent
+jlho:hasConstituent rdf:type owl:ObjectProperty ;
+                     jlhao:prefLabel "has constituent"@en-us ;
+                     jlhao:definition "Includes an essential and formative part of the makeup of something."@en-us ;
+                     jlhao:example "Cake has constituent sugar."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasConversionFactor
+jlho:hasConversionFactor rdf:type owl:ObjectProperty ;
+                   rdfs:range jlho:ConversionFactor ;
+                     jlhao:prefLabel "has conversion factor"@en-us ;
+                     jlhao:definition "Includes a ratio that expresses the numerical relationship."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDate
+jlho:hasDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isDateFor ;
+                rdfs:range jlho:Date ;
+                jlhao:prefLabel "has date"@en-us ;
+                jlhao:definition "Identifies a calendar day, month and year for something."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#hasDatePeriod
+jlho:hasDatePeriod rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isDatePeriodFor ;
+                rdfs:range jlho:DatePeriod ;
+                jlhao:prefLabel "has date period"@en-us ;
+                jlhao:definition "Identifies a specific window of time, including a start date, end date and/or duration for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDateTime
+jlho:hasDateTime rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isDateTimeFor ;
+                rdfs:range jlho:DateTime ;
+                jlhao:prefLabel "has date time"@en-us ;
+                jlhao:definition "Identifies a specific date and time of day, possibly excluding the time zone."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDateTimeStamp
+jlho:hasDateTimeStamp rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isDateTimeStampFor ;
+                rdfs:range jlho:DateTimeStamp ;
+                jlhao:prefLabel "has date time stamp"@en-us ;
+                jlhao:definition "Identifies a specific date and time of day, explicitly including the time zone."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDomain
+jlho:hasDomain rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:isDomainOf ;
+                rdfs:range jlho:Domain ;
+                jlhao:prefLabel "has domain"@en-us ;
+                jlhao:definition "Included in a field of action, thought or influence."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDuration
+jlho:hasDuration rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:isDurationOf ;
+                rdfs:range jlho:Duration ;
+                jlhao:prefLabel "has duration"@en-us ;
+                jlhao:definition "Identifies the duration of a time or date period."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasEndDate
+jlho:hasEndDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasDate ;
+                owl:inverseOf jlho:isEndDateFor ;
+                rdfs:range jlho:Date ;
+                jlhao:prefLabel "has end date"@en-us ;
+                jlhao:definition "Indicates the final or ending date associated with something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasEndTime
+jlho:hasEndTime rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isEndTimeFor ;
+                rdfs:range jlho:ExplicitTimeType ;
+                jlhao:prefLabel "has end time"@en-us ;
+                jlhao:definition "Indicates the final or ending time associated with something."@en-us ;
+                  jlhao:usageNote "Range set to Explicit Time Type to allow for time formats in Explicit Time or Combined Date Time."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasExplicitDate
+jlho:hasExplicitDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasDate ;
+                rdfs:range jlho:ExplicitDate ;
+                jlhao:prefLabel "has explicit date"@en-us ;
+                jlhao:definition "Indicates a stated date, as opposed to a calculated or unknown date, associated with something."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#hasFieldOfPractice
+jlho:hasFieldOfPractice rdf:type owl:ObjectProperty ;
+                    rdfs:range jlho:FieldOfPractice ;
+                    jlhao:prefLabel "has field of practice"@en-us ;
+                    jlhao:definition "Relates something to a discipline or functional area of expertise."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasIdentifier
+jlho:hasIdentifier rdf:type owl:ObjectProperty ;
+                    owl:inverseOf jlho:identifies ;
+                    rdfs:range jlho:Identifier ;
+                    jlhao:prefLabel "has identifier"@en-us ;
+                    jlhao:definition "Indicates something is identified by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasIssuedDate
+jlho:hasIssuedDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasDate ;
+                owl:inverseOf jlho:isDateOfIssueFor ;
+                rdfs:range jlho:Date ;
+                jlhao:prefLabel "has issued date"@en-us ;
+                jlhao:definition "Links something, such as an agreement, contract, license, or report, to the date it was made available."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasMailingAddress
+jlho:hasMailingAddress rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf jlho:hasAddress ;
+              rdfs:range jlho:Address ;
+              jlhao:prefLabel "has mailing address"@en-us ;
+              jlhao:definition "Has address where physical mail is delivered."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasPackaging
+jlho:hasPackaging rdf:type owl:ObjectProperty ;
+                   rdfs:range :Packaging ;
+                   jlhao:prefLabel "has packaging"@en ;
+                   jlhao:definition "Has a material used for packaging."@en .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasPart
+jlho:hasPart rdf:type owl:ObjectProperty ;
+              owl:inverseOf jlho:partOf ;
+              rdf:type owl:TransitiveProperty ;
+              jlhao:prefLabel "has part"@en-us ;
+              jlhao:definition "Includes a portion of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasPhysicalAddress
+jlho:hasPhysicalAddress rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf jlho:hasAddress ;
+              rdfs:range jlho:Address ;
+              jlhao:prefLabel "has physical address"@en-us ;
+              jlhao:definition "Has address of a tangible property or business."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasProcedure
+jlho:hasProcedure rdf:type owl:ObjectProperty ;
+                   rdfs:range jlho:Procedure ;
+                   jlhao:prefLabel "has procedure"@en-us ;
+                   jlhao:definition "Includes a procedure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasRegion
+jlho:hasRegion rdf:type owl:ObjectProperty ;
+                rdfs:range jlho:Region ;
+                jlhao:prefLabel "has region"@en-us ;
+                jlhao:definition "Contains or is located in a region."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasShippingAddress
+jlho:hasShippingAddress rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf jlho:hasAddress ;
+              rdfs:range jlho:Address ;
+              jlhao:prefLabel "has shipping address"@en-us ;
+              jlhao:definition "Has address where purchased items should be delivered."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasStandard
+jlho:hasStandard rdf:type owl:ObjectProperty ;
+                  rdfs:range jlho:Standard ;
+                  jlhao:prefLabel "has standard"@en-us ;
+                  jlhao:definition "Includes a standard."@en-us .
+
+# if system -> set, use 'produces', 'defines' or 'generates'
+# if SetOfStandards -> set, use 'specifies'
+###  https://semantic-data.jlh.com/im/jlho#hasStandardizationSet
+# jlho:hasStandardizationSet rdf:type owl:ObjectProperty ;
+#                 rdfs:domain jlho:StandardizationSystem ;
+#                   rdfs:range jlho:StandardizationSet ;
+#                   jlhao:prefLabel "has standardization set"@en-us ;
+#                   jlhao:definition "Includes a standardization set."@en-us .
+
+# if set -> system, use 'producedBy'
+# if set -> SetOfStandards -> set, use 'specifiedBy'
+###  https://semantic-data.jlh.com/im/jlho#hasStandardizationSystem
+# jlho:hasStandardizationSystem rdf:type owl:ObjectProperty ;
+#                   rdfs:range jlho:StandardizationSystem ;
+#                   jlhao:prefLabel "has standardization system"@en-us ;
+#                   jlhao:definition "Uses or is defined by a standardization system."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasStartDate
+jlho:hasStartDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasDate ;
+                owl:inverseOf jlho:isStartDateFor ;
+                rdfs:range jlho:Date ;
+                jlhao:prefLabel "has start date"@en-us ;
+                jlhao:definition "Indicates the first or starting date associated with something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasStartTime
+jlho:hasStartTime rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isStartTimeFor ;
+                rdfs:range jlho:ExplicitTimeType ;
+                jlhao:prefLabel "has start time"@en-us ;
+                jlhao:definition "Indicates the first or starting time associated with something."@en-us ;
+                  jlhao:usageNote "Range set to Explicit Time Type to allow for time formats in Explicit Time or Combined Date Time."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubBrand
+jlho:hasSubBrand rdf:type owl:ObjectProperty ;
+                  rdfs:range jlho:Brand ;
+                  jlhao:prefLabel "has sub-brand"@en ;
+                  jlhao:definition "Categorized by a subordinate brand."@en ;
+                  jlhao:usageNote "Domain/subject will most likely be Brand, but is not fixed to allow for other scenarios."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubBusinessGroup
+jlho:hasSubBusinessGroup rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf jlho:hasSubCompanyUnit ;
+                          owl:inverseOf jlho:isSubBusinessGroupOf ;
+                          rdfs:range jlho:BusinessGroup ;
+                          jlhao:prefLabel "has sub-business group"@en-us ;
+                          jlhao:definition "Includes a subordinate business group."@en-us ;
+                          jlhao:usageNote "Subject will most likely be BusinessGroup, but is not fixed to allow for other scenarios."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubDomain
+jlho:hasSubDomain rdf:type owl:ObjectProperty ;
+                   owl:inverseOf jlho:isSubDomainOf ;
+                   rdfs:range jlho:Domain ;
+                   jlhao:prefLabel "has sub-domain"@en-us ;
+                   jlhao:definition "Includes a subordinate domain."@en-us ;
+                   jlhao:usageNote "Subject will most likely be Domain, but is not fixed to allow for other scenarios."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubRegion
+jlho:hasSubRegion rdf:type owl:ObjectProperty ;
+                   rdfs:range jlho:Region ;
+                   jlhao:prefLabel "has sub-region"@en-us ;
+                   jlhao:definition "Includes a subordinate region."@en-us ;
+                   jlhao:usageNote "Subject will most likely be Region, but is not fixed to allow for other scenarios."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubCompanyUnit
+jlho:hasSubCompanyUnit rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:isSubCompanyUnitOf ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:domain jlho:Company ;
+                 rdfs:range jlho:CompanyUnit ;
+                 jlhao:prefLabel "has sub-company unit"@en-us ;
+                 jlhao:definition "Includes a subordinate company unit."@en-us ;
+                 jlhao:usageNote "Subject will most likely be CompanyUnit or Company."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubdivision
+jlho:hasSubdivision rdf:type owl:ObjectProperty ;
+                     rdfs:range jlho:Region ;
+                     jlhao:prefLabel "has subdivision"@en-us ;
+                     jlhao:definition "Identifies how a country is divided (state, province, region, etc.)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasSubTopic
+jlho:hasSubTopic rdf:type owl:ObjectProperty ;
+                      rdfs:range jlho:Topic ;
+                     jlhao:prefLabel "has sub-topic"@en-us ;
+                     jlhao:definition "Relates a broader concept to its specialized sub-topic."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasTime
+jlho:hasTime rdf:type owl:ObjectProperty ;
+                owl:inverseOf jlho:isTimeFor ;
+                rdfs:range jlho:Time ;
+                jlhao:prefLabel "has time"@en-us ;
+                jlhao:definition "Specifies a general time that can be associated with any element."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasTimePeriod
+jlho:hasTimePeriod rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:hasTime ;
+                owl:inverseOf jlho:isTimePeriodFor ;
+                rdfs:range jlho:TimePeriod ;
+                jlhao:prefLabel "has time period"@en-us ;
+                jlhao:definition "Identifies a specific window of time, including a start time, end time and/or duration for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOM
+jlho:hasUOM rdf:type owl:ObjectProperty ;
+              rdfs:domain jlho:Quantity ;
+              rdfs:range jlho:UnitOfMeasure ;
+              jlhao:prefLabel "has UOM"@en-us ;
+              jlhao:definition "Relates a quantity to its unit of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMBase
+jlho:hasUOMBase rdf:type owl:ObjectProperty ;
+              rdfs:domain jlho:UnitOfMeasure ;
+              rdfs:range jlho:UnitOfMeasure ;
+              jlhao:prefLabel "has base unit of measure"@en-us ;
+              jlhao:definition "A unit of measure has a base unit of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMDimension
+jlho:hasUOMDimension rdf:type owl:ObjectProperty ;
+                rdfs:domain jlho:Quantity ;
+                rdfs:range jlho:Dimension ;
+                jlhao:prefLabel "has UOM dimension"@en-us ;
+                jlhao:definition "Relates a quantity to its dimension."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMDenominator
+jlho:hasUOMDenominator rdf:type owl:ObjectProperty ;
+                     rdfs:range jlho:UnitOfMeasure ;
+                     jlhao:prefLabel "has UOM denominator"@en-us ;
+                     jlhao:definition "Includes the lower part of a unit of measure fraction that indicates the total number of equally sized parts that make up a whole, defining the standard for measurement or the total population being considered."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMNumerator
+jlho:hasUOMNumerator rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:UnitOfMeasure ;
+                   rdfs:range jlho:UnitOfMeasure ;
+                    jlhao:prefLabel "has UOM numerator"@en-us ;
+                    jlhao:definition "Includes the upper part of a unit of measure fraction that indicates the portion of the whole that is being considered."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMPrefix
+jlho:hasUOMPrefix rdf:type owl:ObjectProperty ;
+              rdfs:domain jlho:UnitOfMeasure ;
+              rdfs:range jlho:UOMPrefix ;
+              jlhao:prefLabel "has UOM prefix"@en-us ;
+              jlhao:definition "Relates a unit of measure to a prefix."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMTerm1
+jlho:hasUOMTerm1 rdf:type owl:ObjectProperty ;
+               rdfs:domain jlho:UnitOfMeasure ;
+               rdfs:range jlho:UnitOfMeasure ;
+              jlhao:prefLabel "has UOM term 1"@en-us ;
+              jlhao:definition "has first term"@en-us ;
+              jlhao:usageNote "The first multiplicative unit of a domain that contains two base units of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMTerm2
+jlho:hasUOMTerm2 rdf:type owl:ObjectProperty ;
+               rdfs:domain jlho:UnitOfMeasure ;
+               rdfs:range jlho:UnitOfMeasure ;
+              jlhao:prefLabel "has UOM term 2"@en-us ;
+              jlhao:definition "has second term"@en-us ;
+              jlhao:usageNote "The second multiplicative unit of a domain that contains two base units of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#identifiedBy
+jlho:identifiedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf jlho:identifiedBy ;
+                 rdfs:domain jlho:Identifier ;
+                 jlhao:prefLabel "identified by"@en-us ;
+                 jlhao:definition "Has identity verified by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#identifies
+jlho:identifies rdf:type owl:ObjectProperty ;
+                  owl:inverseOf jlho:identifiedBy ;
+                 rdfs:domain jlho:Identifier ;
+                 jlhao:prefLabel "identifies"@en-us ;
+                 jlhao:definition "Verifies the identity of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesCountry
+jlho:includesCountry rdf:type owl:ObjectProperty ;
+                      rdfs:range jlho:Country ;
+                      jlhao:prefLabel "includes country"@en-us ;
+                      jlhao:definition "Contains a country."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesFormulaLine
+jlho:includesFormulaLine rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:includesSpecification ;
+                     rdfs:domain jlho:Formula ;
+                     rdfs:range jlho:FormulaLine ;
+                     jlhao:prefLabel "includes formula line"@en-us ;
+                     jlhao:definition "Includes a line of ingredients detail."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesFormulaProcess
+jlho:includesFormulaProcess rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf jlho:includesProcess ;
+                        rdfs:domain jlho:Formula ;
+                        rdfs:range jlho:FormulaProcess ;
+                        jlhao:prefLabel "includes formula process"@en-us ;
+                        jlhao:definition "Includes a line of process detail."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesGuideline
+jlho:includesGuideline rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:Document ;
+                   rdfs:range jlho:Guideline ;
+                   jlhao:prefLabel "includes guideline"@en-us ;
+                   jlhao:definition "Includes, publishes or specifies a guideline."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesIngredient
+jlho:includesIngredient rdf:type owl:ObjectProperty ;
+                    rdfs:range :Ingredient ;
+                    jlhao:prefLabel "includes ingredient"@en ;
+                    jlhao:definition "Includes an ingredient."@en .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesProcedure
+jlho:includesProcedure rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:Document ;
+                   rdfs:range jlho:Procedure ;
+                   jlhao:prefLabel "includes procedure"@en-us ;
+                   jlhao:definition "Includes, publishes or specifies a procedure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesProcess
+jlho:includesProcess rdf:type owl:ObjectProperty ;
+                 rdfs:range jlho:Process ;
+                 jlhao:prefLabel "includes process"@en-us ;
+                 jlhao:definition "Includes a process."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#includesSpecification
+jlho:includesSpecification rdf:type owl:ObjectProperty ;
+                   rdfs:domain jlho:Document ;
+                   rdfs:range jlho:Specification ;
+                   jlhao:prefLabel "includes specification"@en-us ;
+                   jlhao:definition "Includes or publishes a specification."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isBusinessOperationOf
+jlho:isBusinessOperationOf rdf:type owl:ObjectProperty ;
+                            rdfs:domain jlho:BusinessOperation ;
+                            jlhao:prefLabel "is business operation of"@en-us ;
+                            jlhao:definition "Is a business operation of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isDateFor
+jlho:isDateFor rdf:type owl:ObjectProperty ;
+                rdfs:domain jlho:Date ;
+                jlhao:prefLabel "is date for"@en-us ;
+                jlhao:definition "Indicates date is for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isDateOfIssueFor
+jlho:isDateOfIssueFor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:isStartDateFor ;
+                rdfs:domain jlho:TimeInstant ;
+                jlhao:prefLabel "is date of issue for"@en-us ;
+                jlhao:definition "Links an issue date to something, such as an agreement, contract, license, or report."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isDatePeriodFor
+jlho:isDatePeriodFor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:isDateFor ;
+                rdfs:domain jlho:DatePeriod ;
+                jlhao:prefLabel "is date period for"@en-us ;
+                jlhao:definition "Indicates a specific date range for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isDateTimeFor
+jlho:isDateTimeFor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:isTimeFor ;
+                rdfs:domain jlho:DateTime ;
+                jlhao:prefLabel "is date time for"@en-us ;
+                jlhao:definition "Indicates a specific date and time for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isDateTimeStampFor
+jlho:isDateTimeStampFor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:isTimeFor ;
+                rdfs:domain jlho:DateTimeStamp ;
+                jlhao:prefLabel "is date time stamp for"@en-us ;
+                jlhao:definition "Indicates a specific date and time with time zone for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isEndDateFor
+jlho:isEndDateFor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:isDateFor ;
+                rdfs:domain jlho:TimeInstant ;
+                jlhao:prefLabel "is end date for"@en-us ;
+                jlhao:definition "Indicates date is the final or ending date for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isEndTimeFor
+jlho:isEndTimeFor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:isTimeFor ;
+                rdfs:domain jlho:TimeInstant ;
+                jlhao:prefLabel "is end time for"@en-us ;
+                jlhao:definition "Indicates time is the final or ending time for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isStartDateFor
+jlho:isStartDateFor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:isDateFor ;
+                rdfs:domain jlho:TimeInstant ;
+                jlhao:prefLabel "is start date for"@en-us ;
+                jlhao:definition "Indicates date is the first or starting date for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isStartTimeFor
+jlho:isStartTimeFor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf jlho:isTimeFor ;
+                rdfs:domain jlho:TimeInstant ;
+                jlhao:prefLabel "is start time for"@en-us ;
+                jlhao:definition "Indicates time is the first or starting time for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isSubBusinessGroupOf
+jlho:isSubBusinessGroupOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf jlho:isSubCompanyUnitOf ;
+                           rdfs:domain jlho:BusinessGroup ;
+                           jlhao:prefLabel "is sub-business group of"@en-us ;
+                           jlhao:definition "Is a subordinate business group of."@en-us ;
+                           jlhao:usageNote "Object will most likely be BusinessGroup, but is not fixed to allow for other scenarios."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isSubCompanyUnitOf
+jlho:isSubCompanyUnitOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain jlho:CompanyUnit ;
+                  jlhao:prefLabel "is sub-company unit of"@en-us ;
+                  jlhao:definition "Is the subdivision of the company unit."@en-us ;
+                  jlhao:usageNote "Object will most likely be Company or CompanyUnit."@en-us .
+
+
+# ###  https://semantic-data.jlh.com/im/jlho#isSubUnitOf
+# jlho:isSubUnitOf rdf:type owl:ObjectProperty ;
+#                   rdfs:domain jlho:CompanyUnit ;
+#                   jlhao:prefLabel "is sub unit of"@en-us ;
+#                   jlhao:definition "Relates a part of an organization to a larger entity."@en-us ;
+#                   jlhao:usageNote "Object will most likely be Company or CompanyUnit."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isTimeFor
+jlho:isTimeFor rdf:type owl:ObjectProperty ;
+                rdfs:domain jlho:TimeInstant ;
+                jlhao:prefLabel "is time for"@en-us ;
+                jlhao:definition "Indicates time is for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isTimePeriodFor
+jlho:isTimePeriodFor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf jlho:isTimeFor ;
+                rdfs:domain jlho:TimePeriod ;
+                jlhao:prefLabel "is time period for"@en-us ;
+                jlhao:definition "Indicates a specific time range for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#isUOMDimensionFor
+jlho:isUOMDimensionFor rdf:type owl:ObjectProperty ;
+                  owl:inverseOf jlho:appliesToUOMDimension ;
+                rdfs:domain jlho:Dimension ;
+                rdfs:range jlho:UnitOfMeasure ;
+                jlhao:prefLabel "is UOM dimension for"@en-us ;
+                jlhao:definition "Relates a dimension to a unit of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#organizedBy
+jlho:organizedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf jlho:organizes ;
+                  jlhao:prefLabel "organized by"@en-us ;
+                  jlhao:definition "Arranged or formed into a whole by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#organizes
+jlho:organizes rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:organizedBy ;
+                jlhao:prefLabel "organizes"@en-us ;
+                jlhao:definition "Arranges or forms something into a whole."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#partOf
+jlho:partOf rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty ;
+             jlhao:prefLabel "part of"@en-us ;
+             jlhao:definition "A portion, section or division of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#playsRoleOf
+jlho:playsRoleOf rdf:type owl:ObjectProperty ;
+              rdfs:range jlho:Role ;
+              jlhao:prefLabel "plays role of"@en-us ;
+              jlhao:definition "Plays the role or part of."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#precedes
+jlho:precedes rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty ;
+                 owl:inverseOf jlho:succeeds ;
+              jlhao:prefLabel "precedes"@en-us ;
+              jlhao:description "Occurs before."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#producedBy
+jlho:producedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:produces ;
+                           jlhao:prefLabel "produced by"@en-us ;
+                           jlhao:definition "Created or yielded by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#produces
+jlho:produces rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:producedBy ;
+                           jlhao:prefLabel "produces"@en-us ;
+                           jlhao:definition "Create, brings into existence, or yields."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#providedBy
+jlho:providedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:providedTo ;
+                 jlhao:prefLabel "provided by"@en-us ;
+                 jlhao:definition "Is made available by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#providedTo
+jlho:providedTo rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:providedBy ;
+                 jlhao:prefLabel "provided to"@en-us ;
+                 jlhao:definition "Is made available to."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#provides
+jlho:provides rdf:type owl:ObjectProperty ;
+               jlhao:prefLabel "provides"@en-us ;
+               jlhao:definition "Makes available."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#publishedBy
+jlho:publishedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:publishes ;
+               jlhao:prefLabel "published by"@en-us ;
+               jlhao:definition "Is prepared and issued by."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#publishes
+jlho:publishes rdf:type owl:ObjectProperty ;
+                 owl:inverseOf jlho:publishedBy ;
+               jlhao:prefLabel "publishes"@en-us ;
+               jlhao:definition "Prepares and issues."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#referencedInDocument
+jlho:referencedInDocument rdf:type owl:ObjectProperty ;
+                rdfs:range jlho:Document ;
+                jlhao:prefLabel "referenced in document"@en-us ;
+                jlhao:definition "Indicates something was included in a document."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#subDomainOf
+jlho:subDomainOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain jlho:Domain ;
+                    jlhao:prefLabel "sub-domain of"@en-us ;
+                    jlhao:definition "Within the subdivision of a specific sphere of activity or knowledge of."@en-us ;
+                    jlhao:usageNote "Object will most likely be Domain, but is not fixed to allow for other scenarios."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#succeeds
+jlho:succeeds rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty ;
+                 owl:inverseOf jlho:precedes ;
+              jlhao:prefLabel "succeeds"@en-us ;
+              jlhao:description "Occurs after."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#uomDimensionAppliesTo
+jlho:uomDimensionApplies rdf:type owl:ObjectProperty ;
+                  owl:inverseOf jlho:appliesToUOMDimension ;
+                rdfs:domain jlho:UnitOfMeasure ;
+                rdfs:range jlho:Dimension ;
+                jlhao:prefLabel "applies to UOM dimension"@en-us ;
+                jlhao:definition "Relates a unit of measure to a dimension."@en-us .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+
+###  https://semantic-data.jlh.com/im/jlho#commonAbbreviation
+jlho:commonAbbreviation rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf jlho:hasName ;
+                  rdfs:range xsd:string ;
+                 jlhao:prefLabel "common abbreviation"@en-us ;
+                 jlhao:definition "An initialism type of abbreviation consisting of initial letters pronounced separately."@en-us ;
+                   jlhao:usageNote "String should include a language tag"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#commonAcronym
+jlho:commonAcronym rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf jlho:hasName ;
+                  rdfs:range xsd:string ;
+                 jlhao:prefLabel "common acronym"@en-us ;
+                 jlhao:definition "Has a widely-used abbreviation made up of the initial letters of the name and pronounced as a word."@en-us ;
+                   jlhao:usageNote "String should include a language tag"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDateTimeStampValue
+jlho:hasDateTimeStampValue rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf jlho:hasCombinedDateTimeValue ;
+                  rdfs:range xsd:dateTimeStamp ;
+                     jlhao:prefLabel "has date time stamp value"@en-us ;
+                     jlhao:definition "Specifies an actual literal (explicit) date and time in ISO 8601 format (HH:MM:SS, with a required ending Z for UTC or an offset, such as +05.00)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDateTimeValue
+jlho:hasDateTimeValue rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf jlho:hasCombinedDateTimeValue ;
+                  rdfs:range xsd:dateTime ;
+                     jlhao:prefLabel "has date time value"@en-us ;
+                     jlhao:definition "Specifies an actual literal (explicit) date and time in ISO 8601 format (HH:MM:SS, with an optional ending Z for UTC or an offset, such as +05.00)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDateValue
+jlho:hasDateValue rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:date ;
+                     jlhao:prefLabel "has date value"@en-us ;
+		                jlhao:example "2002-10-10 means October 10, 2002"@en-us ;
+                     jlhao:definition "Specifies an actual literal (explicit) date in the ISO 8601 format (YYYY-MM-DD)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDescription
+jlho:hasDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf jlho:hasTextValue ;
+                     jlhao:prefLabel "has description"@en-us ;
+                     jlhao:definition "Provides a textual statement, picture in words, or account that describes something."@en-us ;
+                   jlhao:usageNote "String should include a language tag."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasDurationValue
+jlho:hasDurationValue rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                     jlhao:prefLabel "has duration value"@en-us ;
+                    jlhao:example "-P3D means negative 3 days duration. This is used with OffsetDates to specify 3 days before (prior) to some other Date."@en-us ;
+                    jlhao:example "P1Y means 1 year"@en-us ;
+                    jlhao:example "P1Y2M3DT4H5M6S means 1 year, 2 months, 3 days, 4 hours, 5 minutes, 6 seconds"@en-us ;
+                    jlhao:example "P2M means 2 months"@en-us ;
+                    jlhao:example "P3D means 3 days"@en-us ;
+                    jlhao:example "PT4H means 4 hours"@en-us ;
+                    jlhao:example "PT5M means 5 minutes"@en-us ;
+                    jlhao:example "PT6S means 6 seconds"@en-us ;
+                     jlhao:definition "Specifies a literal (explicit) duration (amount of time) captured in the format specified for xsd:duration (i.e., ISO 8601 format)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasCombinedDateTimeValue
+jlho:hasCombinedDateTimeValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf jlho:hasTimeTypeValue ;
+                     jlhao:prefLabel "has a date time value"@en-us ;
+                     jlhao:definition "Specifies an actual literal (explicit) date and time with or without an ending Z for UTC or an offset."@en-us ;
+                    jlhao:usageNote "Created as a collective property for hasDateTimeValue and hasDateTimeStampValue; not meant to be utilized."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasName
+jlho:hasName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf jlho:hasTextValue ;
+              jlhao:prefLabel "has name"@en-us ;
+              jlhao:definition "Has textual name."@en-us ;
+            jlhao:usageNote "String should include a language tag."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasTextValue
+jlho:hasTextValue rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string ;
+                   jlhao:prefLabel "has text value"@en-us ;
+                   jlhao:definition "Provides a string value for something."@en-us ;
+                   jlhao:usageNote "String should include a language tag."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasTimeTypeValue
+jlho:hasTimeTypeValue rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                     jlhao:prefLabel "has time type value"@en-us ;
+                     jlhao:definition "Specifies an explicit time, captured in a time, data time or date time stamp value."@en-us ;
+                    jlhao:usageNote "Created as a collective property for hasTimeValue and hasCombinedDateTimeValue (hasDateTimeValue and hasDateTimeStampValue); not meant to be utilized."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasTimeValue
+jlho:hasTimeValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf jlho:hasTimeTypeValue ;
+                  rdfs:range xsd:string ;
+                     jlhao:prefLabel "has time value"@en-us ;
+                     jlhao:definition "Specifies an explicit time, captured in the ISO 8601 format (HH:MM:SS, with an optional ending Z for UTC or an offset, such as +05.00)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMExponent
+jlho:hasUOMExponent rdf:type owl:DatatypeProperty ;
+                  rdfs:domain jlho:UnitOfMeasure ;
+                  rdfs:range xsd:integer ;
+                  jlhao:prefLabel "has UOM exponent"@en-us ;
+                  jlhao:definition "How many times the base UOM is multiplied."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMFactor
+jlho:hasUOMFactor rdf:type owl:DatatypeProperty ;
+                rdfs:domain jlho:UnitOfMeasure ;
+                rdfs:range xsd:decimal .
+
+
+###  https://semantic-data.jlh.com/im/jlho#hasUOMOffset
+jlho:hasUOMOffset rdf:type owl:DatatypeProperty ;
+                rdfs:domain jlho:UnitOfMeasure ;
+                rdfs:range xsd:decimal .
+
+
+###  https://semantic-data.jlh.com/im/jlho#issuedDate
+jlho:issuedDate rdf:type owl:DatatypeProperty ;
+                #    rdfs:range xsd:string ;
+                   jlhao:prefLabel "issued date"@en-us ;
+                   jlhao:definition "Released or published on date."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#issuedYear
+jlho:issuedYear rdf:type owl:DatatypeProperty ;
+                #    rdfs:range xsd:string ;
+                   jlhao:prefLabel "issued year"@en-us ;
+                   jlhao:definition "Released or published in year."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#observedDateTime
+jlho:observedDateTime rdf:type owl:DatatypeProperty ;
+                rdfs:range jlho:CombinedDateTime ;
+                jlhao:prefLabel "observed date time"@en-us ;
+                jlhao:definition "Indicates a date and time associated with an event, measurement, record, or observation."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#quantityValue
+jlho:quantityValue rdf:type owl:DatatypeProperty ;
+              jlhao:prefLabel "quantity value"@en-us ;
+                rdfs:domain jlho:Quantity ;
+                rdfs:range xsd:decimal  ;
+              jlhao:description "A property to relate an observable thing with a quantity value."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#streetAddress1
+jlho:streetAddress1 rdf:type owl:DatatypeProperty ;
+                   rdfs:domain jlho:Address ;
+                   rdfs:range xsd:string ;
+                   jlhao:prefLabel "street address 1"@en-us ;
+                   jlhao:definition "First line in an address that describes street location."@en-us ;
+                   jlhao:usageNote "String should include a language tag."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#streetAddress2
+jlho:streetAddress2 rdf:type owl:DatatypeProperty ;
+                   rdfs:domain jlho:Address ;
+                   rdfs:range xsd:string ;
+                   jlhao:prefLabel "street address 2"@en-us ;
+                   jlhao:definition "Second line in an address that describes street location."@en-us ;
+                   jlhao:usageNote "String should include a language tag."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#streetAddress3
+jlho:streetAddress3 rdf:type owl:DatatypeProperty ;
+                   rdfs:domain jlho:Address ;
+                   rdfs:range xsd:string ;
+                   jlhao:prefLabel "street address 3"@en-us ;
+                   jlhao:definition "Third line in an address that describes street location."@en-us ;
+                   jlhao:usageNote "String should include a language tag"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#UOMSymbol
+jlho:UOMSymbol rdf:type owl:DatatypeProperty ;
+              jlhao:prefLabel "UOM symbol"@en-us ;
+                rdfs:domain :UnitOfMeasure ;
+                rdfs:range xsd:string  ;
+              jlhao:description "Relates a UOM to its symbol."@en-us .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://semantic-data.jlh.com/im/jlho#Activity
+jlho:Activity rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Intangible ;
+               jlhao:prefLabel "Activity"@en-us ;
+               jlhao:definition "An action or sequence of actions organized towards a specific goal."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Address
+jlho:Address rdf:type owl:Class ;
+              rdfs:subClassOf jlho:GeographicLocation ;
+              jlhao:prefLabel "Address"@en-us ;
+              jlhao:definition "The particulars of the place where someone lives or an organization is situated."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Aerosol
+jlho:Aerosol rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Colloid ;
+              jlhao:prefLabel "Aerosol"@en-us ;
+              jlhao:definition "A colloid where solid or liquid particles are dispersed in a gas."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Alloy
+jlho:Alloy rdf:type owl:Class ;
+            rdfs:subClassOf jlho:EngineeredMaterial ;
+            jlhao:prefLabel "Alloy"@en-us ;
+            jlhao:definition "A metallic material composed of two or more elements, where at least one is a metal, designed to enhance specific properties such as strength or corrosion resistance ."@en-us ;
+            jlhao:exampleValues "Steel, Bronze, Brass, Titanium Alloy"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Anomaly
+jlho:Anomaly rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Phenomenon ;
+              jlhao:prefLabel "Anomaly"@en-us ;
+              jlhao:definition "A rule, practice, or observation that is different from what is normal or usual."@en-us .
+
+
+# ###  https://semantic-data.jlh.com/im/jlho#Arrangement
+# jlho:Arrangement rdf:type owl:Class ;
+#                   rdfs:subClassOf jlho:Method ;
+#                   jlhao:prefLabel "Arrangement"@en-us ;
+#                   jlhao:definition "A systematic plan, manner, or method for making, doing, achieving, or organizing something."@en-us ;
+#                   jlhao:example "Examples include designs, scheme, models, methodologies, alphabetical or numeric ordering, and the like."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Assessment
+jlho:Assessment rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Activity ;
+                 jlhao:prefLabel "Assessment"@en-us ;
+                 jlhao:definition "The evaluation or estimation of the nature, quality, or ability of someone or something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Asset
+jlho:Asset rdf:type owl:Class ;
+                rdfs:subClassOf jlho:MaterialRole ;
+                jlhao:prefLabel "Asset"@en-us ;
+            jlhao:definition "A tangible, physical object used to support operation in production, storage, transportation, or office settings."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Association
+jlho:Association rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Organization ;
+                  jlhao:prefLabel "Association"@en-us ;
+                  jlhao:definition "An organization of people with a common purpose and having a formal structure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BiologicalSubstance
+jlho:BiologicalSubstance rdf:type owl:Class ;
+                          rdfs:subClassOf jlho:Substance ;
+                          jlhao:prefLabel "Biological Substance"@en-us ;
+                          jlhao:definition "A material produced by or derived from living organisms."@en-us ;
+                          jlhao:exampleValues "Insulin, blood plasma, yeast extract, antibodies"@en-us ;
+                          jlhao:explanatoryNote "Includes naturally occurring substances such as proteins, enzymes, hormones, and cells, often used in medical, agricultural, or industrial contexts."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Brand
+jlho:Brand rdf:type owl:Class ;
+            rdfs:subClassOf jlho:Category ;
+            jlhao:prefLabel "Brand"@en-us ;
+            jlhao:definition "A particular type or kind of something."@en-us .
+
+
+# ###  https://semantic-data.jlh.com/im/jlho#Business
+# jlho:Business rdf:type owl:Class ;
+#                rdfs:subClassOf jlho:Capability ;
+#                jlhao:prefLabel "Business"@en-us ;
+#                jlhao:definition "The company activity of buying and selling goods and services."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessConcept
+jlho:BusinessConcept rdf:type owl:Class ;
+                      rdfs:subClassOf jlho:Concept ;
+                      jlhao:prefLabel "Business Concept"@en-us ;
+                      jlhao:definition "A succinct statement of the purpose and intent of a business idea and provides a summary of the most crucial aspect(s) of the business plan."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessDomain
+jlho:BusinessDomain rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:CompanyUnit ,
+                                     jlho:Domain ;
+                     jlhao:prefLabel "Business Domain"@en-us ;
+                     jlhao:definition "A company function or sub-function has a unit specific to a company enterprise or business group."@en-us ;
+                     jlhao:synonym "Business Enablement Team"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessEnterprise
+jlho:BusinessEnterprise rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:CompanyUnit ;
+                 jlhao:prefLabel "Business Enterprise"@en-us ;
+                 jlhao:definition "An organization group of a company that represents a specific line of business, usually responsible for its own profit and loss."@en-us ;
+                jlhao:synonym "Line Of Business"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessFunction
+jlho:BusinessFunction rdf:type owl:Class ;
+               rdfs:subClassOf jlho:CompanyUnit ;
+               jlhao:prefLabel "Business Function"@en-us ;
+               jlhao:definition "A specific, defined area of work within a business, characterized by a group of related activities and responsibilities."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessFunctionDomain
+jlho:BusinessFunctionDomain rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:CompanyUnit ,
+                                     jlho:Domain ;
+                     jlhao:prefLabel "Business Function Domain"@en-us ;
+                     jlhao:definition "A company enterprise or business group unit specific to a company function or sub-function."@en-us ;
+                     jlhao:synonym "Function Enablement Team"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessGroup
+jlho:BusinessGroup rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:CompanyUnit ;
+                    jlhao:prefLabel "Business Group"@en-us ;
+                    jlhao:altLabel "Enterprise Business Group"@en-us ;
+                    jlhao:definition "A smaller, specialized unit within a company or sub-unit of a company."@en-us ;
+                    jlhao:prefLabel "Business Group"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessOperation
+jlho:BusinessOperation rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:Activity ;
+                        jlhao:prefLabel "Business Operation"@en-us ;
+                        jlhao:definition "The core, day-to-day activities that a company undertakes to generate revenue and achieve its objectives."@en-us ;
+                        jlhao:example "Core functions, such as product development, production, marketing, sales, customer service, and supply chain management."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#BusinessStrategy
+jlho:BusinessStrategy rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:Strategy ;
+                       jlhao:prefLabel "Business Strategy"@en-us ;
+                       jlhao:definition "A comprehensive plan outlining how a company or business unit will achieve its long-term goals and maintain a competitive advantage, encompassing resource allocation, market positioning, and overall direction."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Campaign
+jlho:Campaign rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Activity ;
+               jlhao:prefLabel "Campaign"@en-us ;
+               jlhao:definition "A planned and coordinated effort, typically composed of a series of activities, to achieve a goal."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Capability
+jlho:Capability rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Intangible ;
+                 jlhao:prefLabel "Capability"@en-us ;
+                 jlhao:definition "The ability to perform a specific function or achieve a particular outcome."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Categorization
+jlho:Categorization rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Method ;
+                     jlhao:prefLabel "Categorization"@en-us ;
+                     jlhao:usageNote "The purpose of categorization is typically to create a nuanced understanding of data, reveal patterns, and improve usability."@en-us ;
+                     jlhao:scopeNote "Categorization is a broader process of grouping things into categories based on common features or relevance."@en-us ;
+                     jlhao:definition "A grouping of items based on shared traits, creating a broader, flexible set of groupings that may overlap."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Category
+jlho:Category rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Intangible ;
+               jlhao:prefLabel "Category"@en-us ;
+               jlhao:definition "A class or division of people or things regarded as having particular shared characteristics."@en-us ;
+               jlhao:synonym "Class"@en-us ,
+                              "Type"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Ceramic
+jlho:Ceramic rdf:type owl:Class ;
+              rdfs:subClassOf jlho:EngineeredMaterial ;
+              jlhao:prefLabel "Ceramic"@en-us ;
+              jlhao:definition "A non-metallic, inorganic material formed by heat and often pressure, known for hardness, brittleness, and heat resistance."@en-us ;
+              jlhao:exampleValues "Glass (e.g., Soda Lime Glass, Borosilicate Glass)"@en-us ,
+                                   "Non-Oxide Ceramic (e.g., Silicon Carbide, Boron Nitride)"@en-us ,
+                                   "Oxide Ceramic (e.g., Alumina, Zirconia)"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Certificate
+jlho:Certificate rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Document ;
+                  jlhao:prefLabel "Certificate"@en-us ;
+                  jlhao:definition "A document attesting to the truth of some fact or set of facts."@en-us ;
+                  jlhao:usageNote "Certificates, such as electronic certificates, including public keys, may be issued by some certificate authority."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ChangeEvent
+jlho:ChangeEvent rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Activity ;
+                  jlhao:prefLabel "Change Event"@en-us ;
+                  jlhao:definition "A new development or unforeseen situation that alters the course of events or a plan."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ChemicalCompound
+jlho:ChemicalCompound rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:ChemicalSubstance ;
+                       jlhao:prefLabel "Chemical Compound"@en-us ;
+                       jlhao:definition "A substance formed when two or more different chemical elements are chemically bonded together, typically in a fixed ratio."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ChemicalElement
+jlho:ChemicalElement rdf:type owl:Class ;
+                      rdfs:subClassOf jlho:ChemicalSubstance ;
+                      jlhao:prefLabel "Chemical Element"@en-us ;
+                      jlhao:definition "A substance that cannot be broken down into simpler substances by chemical means."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ChemicalSubstance
+jlho:ChemicalSubstance rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:Substance ;
+                        jlhao:prefLabel "Chemical Substance"@en-us ;
+                        jlhao:definition "A form of matter with a specific chemical composition and structure."@en-us ;
+                        jlhao:exampleValues "Water (H₂O), ethanol (C₂H₆O), sodium chloride (NaCl), oxygen (O₂)"@en-us ;
+                        jlhao:explanatoryNote "Can be an element or a compound and cannot be separated into components by physical means."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#City
+jlho:City rdf:type owl:Class ;
+           rdfs:subClassOf jlho:GeographicLocation ;
+           jlhao:prefLabel "City"@en-us ;
+           jlhao:definition "An urban administrative division having corporate status and usually powers of self-government or jurisdiction."@en-us ;
+           jlhao:synonym "Municipality"@en-us ,
+                          "Town"@en-us ,
+                          "Village"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ClassificationScheme
+jlho:ClassificationScheme rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Scheme ;
+                     jlhao:prefLabel "Classification Scheme"@en-us ;
+                     jlhao:usageNote "The purpose of classification is typically to assign security or sensitivity labels, ensure compliance, or standardize information based on strict rules."@en-us ;
+                     jlhao:definition "A system or plan for arranging or organizing entities into categories, that might or might not form a hierarchical structure."@en-us ;
+                     jlhao:example "Linnaean taxonomy (a classification scheme), Dewey Decimal scheme, Hazard classification schemes (e.g., GHS hazard classes)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Climate
+jlho:Climate rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Phenomenon ;
+              jlhao:prefLabel "Climate"@en-us ;
+              jlhao:definition "Climate is how the atmosphere behaves over relatively longer periods of time (the long-term average of weather over time), whereas weather describes conditions of the atmosphere over a short period of time (minutes to days)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Collection
+jlho:Collection rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Intangible ;
+                 jlhao:prefLabel "Collection"@en-us ;
+                 jlhao:definition "Grouping of things that have some shared significance. aka Group"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#CollectionBasedStandardization
+jlho:CollectionBasedStandardization rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Standardization ;
+               jlhao:prefLabel "Collection-Based Standardization"@en-us ;
+                jlhao:usageNote "Use for list-like, catalog-like or grouping-based standardization."@en-us ;
+               jlhao:definition "A form of standardization where entities are standardized by being placed into a defined collection or set, often for the purpose of comparison, grouping, or interoperability."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Colloid
+jlho:Colloid rdf:type owl:Class ;
+              rdfs:subClassOf jlho:HomogeneousMixture ;
+              jlhao:prefLabel "Colloid"@en-us ;
+              jlhao:definition "A mixture with small particles dispersed evenly throughout a continuous medium, without settling."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#CombinedDateTime
+jlho:CombinedDateTime rdf:type owl:Class ;
+           rdfs:subClassOf jlho:ExplicitTimeType ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasCombinedDateTimeValue ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+           jlhao:prefLabel "Combined Date Time"@en-us ;
+           jlhao:definition "An explicit point in time including both a date and time."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Company
+jlho:Company rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Organization ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty jlho:hasCompanyUnit ;
+                                owl:allValuesFrom jlho:CompanyUnit
+                              ] ;
+              jlhao:prefLabel "Company"@en-us ;
+              jlhao:definition " An organization that produces or sells goods or services in order to make a profit."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#CompanyUnit
+jlho:CompanyUnit rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Company ;
+                  jlhao:prefLabel "Company Unit"@en-us ;
+                  jlhao:definition "A distinct part, segment, or entity within a larger company."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Component
+jlho:Component rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Intangible ;
+                jlhao:prefLabel "Component"@en-us ;
+                jlhao:definition "A constituent of a collection or combination of things."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Composite
+jlho:Composite rdf:type owl:Class ;
+                rdfs:subClassOf jlho:EngineeredMaterial ;
+                jlhao:prefLabel "Composite"@en-us ;
+                jlhao:definition "A material made by combining two or more distinct substances (e.g., fibers and resins) to achieve properties superior to those of the individual components."@en-us ;
+                jlhao:exampleValues "Fiber-Reinforced Composite (e.g., CarbonFiberComposite, GlassFiberComposite)"@en-us ,
+                                     "Laminate Composite (e.g., Plywood, LaminatedGlass)"@en-us ,
+                                     "Particulate Composite (e.g., Concrete, Cermet)"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ComputerLanguage
+jlho:ComputerLanguage rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:Language ;
+                       jlhao:prefLabel "Computer Language"@en-us ;
+                       jlhao:definition "A formal language used to communicate with a computer."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Concept
+jlho:Concept rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Intangible ;
+              jlhao:prefLabel "Concept"@en-us ;
+              jlhao:definition "An idea or general notion about a particular subject."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Conference
+jlho:Conference rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Occasion ;
+                 jlhao:prefLabel "Conference"@en-us ;
+                 jlhao:definition "A planned event where a large number of people come together to discuss a particular subject or share information."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Consequence
+jlho:Consequence rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Intangible ;
+                  jlhao:prefLabel "Consequence"@en-us ;
+                  jlhao:definition "The effect or result of an action or condition."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ConstructionMaterial
+jlho:ConstructionMaterial rdf:type owl:Class ;
+                           rdfs:subClassOf jlho:EngineeredMaterial ;
+                           jlhao:prefLabel "Construction Material"@en-us ;
+                           jlhao:definition "Any physical material used in the construction of buildings or infrastructure, often encompassing other material types."@en-us ;
+                           jlhao:exampleValues "Cement, Brick, Rebar, Gypsum Board, Insulation Material, Asphalt"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ConversionFactor
+jlho:ConversionFactor rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:Factor ;
+                       jlhao:prefLabel "Conversion Factor"@en-us ;
+                       jlhao:definition "A number or formula to convert a measurement in one set of units to the same measurement in another set of units."@en-us ;
+                     jlhao:associatedProperties "hasConversionFactor -> ConversionFactor"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#CoreCapability
+jlho:CoreCapability rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Capability ,
+                                     jlho:CompanyUnit ;
+                     jlhao:prefLabel "Core Capability"@en-us ;
+                     jlhao:definition "A smaller, specialized unit within a company or sub-unit of a company that performs a specific function."@en-us ;
+                     jlhao:synonym "Core Capability Team"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Country
+jlho:Country rdf:type owl:Class ;
+              rdfs:subClassOf jlho:GeographicLocation ;
+              jlhao:prefLabel "Country"@en-us ;
+              jlhao:definition "A geopolitical entity representing a distinct territorial body or political entity or dependent territory."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#County
+jlho:County rdf:type owl:Class ;
+             rdfs:subClassOf jlho:GeographicLocation ;
+             jlhao:prefLabel "County"@en-us ;
+             jlhao:definition "A political and administrative division of a country, state or province, providing certain local governmental services."@en-us ;
+             jlhao:synonym "Prefecture"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Course
+jlho:Course rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Occasion ;
+             jlhao:prefLabel "Course"@en-us ;
+             jlhao:definition "A program or series of programs of  instruction."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DataDomain
+jlho:DataDomain rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Domain ;
+                 jlhao:prefLabel "Data Domain"@en-us ;
+                 jlhao:definition "A specialized unit in the context of data analytics or information technology."@en-us ;
+              jlhao:usageNote "Subclasses, such as Batch Processing, Real-time Processing and Electronic Processing, can be added to further refine types of methods. As well, instances of this class can be created without additional hierarchy structure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DataProcessingMethod
+jlho:DataProcessingMethod rdf:type owl:Class ;
+              rdfs:subClassOf jlho:ProcessingMethod ;
+              jlhao:prefLabel "Data Processing Method"@en-us ;
+              jlhao:definition "A series of techniques or operations used to transform raw data or information into a more usable or consumable form."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Date
+jlho:Date rdf:type owl:Class ;
+           rdfs:subClassOf jlho:TimeInstant ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDateValue ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+           jlhao:prefLabel "Date"@en-us ;
+           jlhao:definition "A particular day, month and year when a given event occurred or will occur."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#DatePeriod
+jlho:DatePeriod rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:TimeInterval ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasEndDate ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasStartDate ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDuration ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                 jlhao:prefLabel "Date Period"@en-us ;
+                 jlhao:definition "A time span over one or more calendar days."@en-us ;
+                 jlhao:usageNote "A date period is defined by at least two of three properties: (1) a start date, (2) an end date, and (3) a duration. If more than one of these properties is missing, the date period may be invalid or unknown."@en-us ,
+                                  "A date period is unknown if either the start date or the end date has no value. If a date period is unknown, then the duration should either be omitted or unknown (have no value)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DateTime
+jlho:DateTime rdf:type owl:Class ;
+               rdfs:subClassOf jlho:CombinedDateTime ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDateTimeValue ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               jlhao:prefLabel "Date Time"@en-us ;
+               jlhao:definition "An explicit time point including a date and a time, optionally including a time zone offset."@en-us ;
+               jlhao:usageNote "The time zone is implicitly UTC/GMT."@en-us ,
+                                "If hasDateTimeValue is omitted, the value is calculated or is not (yet) established."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DateTimeStamp
+jlho:DateTimeStamp rdf:type owl:Class ;
+               rdfs:subClassOf jlho:CombinedDateTime ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDateTimeStampValue ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               jlhao:prefLabel "Date Time Stamp"@en-us ;
+               jlhao:definition "An explicit time point including a date and a time that requires a time zone or offset."@en-us ;
+               jlhao:usageNote "If hasDateTimeStampValue is omitted, the value is calculated or is not (yet) established."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DayOfWeek
+jlho:DayOfWeek rdf:type owl:Class ;
+               rdfs:subClassOf jlho:TimeInterval ;
+               jlhao:prefLabel "Day Of Week"@en-us ;
+               jlhao:definition "Commonly utilized period of 24 hours to indicate one of seven days of a week."@en-us ;
+               jlhao:examples "Monday, Tuesday, Wednesday."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DesignStage
+jlho:DesignStage rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Stage ;
+                  jlhao:prefLabel "Design Stage"@en-us ;
+                  jlhao:definition "The phase where technical details, like screen designs, databases, or system interfaces, are defined to create a blueprint for a product or project, translating requirements into a tangible form."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Diagram
+jlho:Diagram rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Document ;
+              jlhao:prefLabel "Diagram"@en-us ;
+              jlhao:definition "A drawing or plan that outlines and explains something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#DigitalLocation
+jlho:DigitalLocation rdf:type owl:Class ;
+                      rdfs:subClassOf jlho:Location ;
+                      jlhao:prefLabel "Digital Location"@en-us ;
+                      jlhao:definition "An electronic (non-physical) address used for websites, apps, platforms, software, etc."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Dimension
+jlho:Dimension rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:Measurement ;
+                    jlhao:prefLabel "Dimension"@en-us ;
+                    jlhao:definition "A distinct aspect, quality or characteristic of something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Disaster
+jlho:Disaster rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Phenomenon ;
+               jlhao:prefLabel "Disaster"@en-us ;
+               jlhao:definition "A grievous event, often occuring suddenly and causing loss of life, damage or hardship."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Document
+jlho:Document rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Entity ;
+               jlhao:prefLabel "Document"@en-us ;
+               jlhao:definition "A piece of written, printed, or electronic matter that provides information or evidence or that serves as an official record."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Domain
+jlho:Domain rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Intangible ;
+             jlhao:prefLabel "Domain"@en-us ;
+             jlhao:definition "A particular field of thought, activity, or interest, especially one over which something has control, influence, or rights."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Drug
+jlho:Drug rdf:type owl:Class ;
+           rdfs:subClassOf jlho:OrganicCompound ;
+           jlhao:prefLabel "Drug"@en-us ;
+           jlhao:definition "A medicine or other substance which has a physiological effect when ingested or otherwise introduced into the body."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Duration
+jlho:Duration rdf:type owl:Class ;
+               rdfs:subClassOf jlho:TimeInterval ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDurationValue ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               jlhao:prefLabel "Duration"@en-us ;
+               jlhao:definition "Interval of time of some specific length."@en-us ;
+               jlhao:usageNote "The time zone is implicitly GMT."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Elastomer
+jlho:Elastomer rdf:type owl:Class ;
+                rdfs:subClassOf jlho:EngineeredMaterial ;
+                jlhao:prefLabel "Elastomer"@en-us ;
+                jlhao:definition "A polymer with elastic properties that allows it to return to its original shape after deformation."@en-us ;
+                jlhao:exampleValues "Synthetic Rubber, Silicone"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#EmailAddress
+jlho:EmailAddress rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:DigitalLocation ;
+                   jlhao:prefLabel "Email Address"@en-us ;
+                   jlhao:definition "An email address identifies an email box to which messages are delivered."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Emergency
+jlho:Emergency rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Phenomenon ;
+                jlhao:prefLabel "Emergency"@en-us ;
+                jlhao:definition "A serious, urgent, often unexpected occurance or occasion requiring immediate action."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Employee
+jlho:Employee rdf:type owl:Class ;
+                rdfs:subClassOf jlho:PersonRole ;
+               jlhao:prefLabel "Employee"@en-us ;
+               jlhao:definition "A person who is hired to work for a business, firm, etc, in return for payment."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Emulsion
+jlho:Emulsion rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Colloid ;
+               jlhao:prefLabel "Emulsion"@en-us ;
+               jlhao:definition "A colloid where both phases are liquids, with one liquid dispersed in another."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#EngineeredMaterial
+jlho:EngineeredMaterial rdf:type owl:Class ;
+                         rdfs:subClassOf jlho:Material ;
+                         jlhao:prefLabel "Engineered Material"@en-us ;
+                         jlhao:definition "A material that has been processed, refined, or synthesized for industrial or commercial use."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Entity
+jlho:Entity rdf:type owl:Class ;
+             jlhao:prefLabel "Entity"@en-us ;
+             jlhao:definition "Something with a distinct and independent existence."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#EntityRole
+jlho:EntityRole rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Role ;
+                 jlhao:prefLabel "Entity Role"@en-us ;
+                 jlhao:definition "A function assumed or part played by an entity."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#Enzyme
+jlho:Enzyme rdf:type owl:Class ;
+             rdfs:subClassOf jlho:BiologicalSubstance ;
+             jlhao:prefLabel "Enzyme"@en-us ;
+             jlhao:definition "Biological catalyst that speeds up chemical reactions."@en-us ;
+             jlhao:exampleValues "Lactase, Amylase, Lipase, Protease, DNA Polymerase"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Equipment
+jlho:Equipment rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Object ;
+                jlhao:prefLabel "Equipment"@en-us ;
+                jlhao:definition "An implement used in an operation or activity."@en-us .
+                # jlhao:exampleValues "Industrial Compressor, Welding Machine, Lathe, Conveyer"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Event
+jlho:Event rdf:type owl:Class ;
+            jlhao:prefLabel "Event"@en-us ;
+            jlhao:definition "Something that happens or occurs."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ExplicitDate
+jlho:ExplicitDate rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Date ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDateValue ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                jlhao:prefLabel "Explicit Date"@en-us ;
+                jlhao:definition "A date where a date value is required."@en-us ;
+                jlhao:requiredProperties "ExplicitDate->hasDateValue"@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#ExplicitDatePeriod
+jlho:ExplicitDatePeriod rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:DatePeriod ,
+                              # can have 0 or 1 :hasEndDate -> :ExplicitDate
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasEndDate ;
+                                  owl:allValuesFrom :ExplicitDate
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasEndDate ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                              # can have 0 or 1 :hasStartDate -> :ExplicitDate
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStartDate ;
+                                  owl:allValuesFrom :ExplicitDate
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasStartDate ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                              # can have 0 or 1 :hasDuration -> :ExplicitDuration
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDuration ;
+                                  owl:allValuesFrom :ExplicitDuration
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDuration ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                 jlhao:prefLabel "Explicit Date Period"@en-us ;
+                 jlhao:definition "A date period for which the start date, end date and duration values are required."@en-us ;
+                 jlhao:usageNote "Any one of start date, end date, duration may be omitted because the missing property can be inferred from the other two."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ExplicitDuration
+jlho:ExplicitDuration rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Duration ,
+                                # must have exactly 1 :hasDurationValue
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDurationValue ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               jlhao:prefLabel "Explicit Duration"@en-us ;
+               jlhao:definition "A duration where the duration value is required."@en-us ;
+                jlhao:requiredProperties "ExplicitDuration->hasDurationValue"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ExplicitTime
+jlho:ExplicitTime rdf:type owl:Class ;
+                rdfs:subClassOf jlho:ExplicitTimeType ,
+                                # must have exactly 1 :hasTimeTypeValue
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasTimeTypeValue ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                jlhao:prefLabel "Explicit Time"@en-us ;
+                jlhao:definition "An explicit time, according to a clock."@en-us ;
+                jlhao:usageNote "An explicit time instance can use the 24-hour format or the 12-hour format, the latter requiring the specification of AM or PM."@en-us ;
+                jlhao:requiredProperties "ExplicitTime->hasTimeValue"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ExplicitTimePeriod
+jlho:ExplicitTimePeriod rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:TimePeriod ,
+                              # can have 0 or 1 :hasEndTime -> :ExplicitTimeType
+                              # first restriction not needed since hasEndTime has a range of ExplicitTimeType
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasEndTime ;
+                                  owl:allValuesFrom :ExplicitTimeType
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasEndTime ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                              # can have 0 or 1 :hasStartime -> :ExplicitTimeType
+                              # first restriction not needed since hasStartTime has a range of ExplicitTimeType
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStartTime ;
+                                  owl:allValuesFrom :ExplicitTimeType
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasStartTime ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                              # can have 0 or 1 :hasDuration -> :ExplicitDuration
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDuration ;
+                                  owl:allValuesFrom :ExplicitDuration
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDuration ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                 jlhao:prefLabel "Time Period"@en-us ;
+                 jlhao:definition "A time period for which the start time, end time and duration values are required."@en-us ;
+                 jlhao:usageNote "Any one of start time, end time, duration may be omitted because the missing property can be inferred from the other two."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ExplicitTimeType
+jlho:ExplicitTimeType rdf:type owl:Class ;
+                rdfs:subClassOf jlho:TimeInstant ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasTimeTypeValue ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                jlhao:prefLabel "Explicit Time"@en-us ;
+                jlhao:definition "An explicit time requiring a time value, that optionally might include a date."@en-us ;
+                jlhao:usageNote "An explicit time instance can use the 24-hour format or the 12-hour format, the latter requiring the specification of AM or PM."@en-us ;
+                jlhao:requiredProperties "ExplicitTimeType->hasTimeTypeValue"@en-us .
+
+
+
+###  https://semantic-data.jlh.com/im/jlho#Factor
+jlho:Factor rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Method ;
+             jlhao:prefLabel "Factor"@en-us ;
+             jlhao:definition "An element or set of elements that contributes to a result or situation."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Farm
+jlho:Farm rdf:type owl:Class ;
+           rdfs:subClassOf jlho:PhysicalLocation ;
+           jlhao:prefLabel "Farm"@en-us ;
+           jlhao:definition "An area of land and its buildings used for growing crops and rearing animals, typically under the control of one owner or manager."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#FieldOfPractice
+jlho:FieldOfPractice rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Entity ;
+                jlhao:prefLabel "Field Of Practice"@en-us ;
+                jlhao:definition "A discipline or domain of expertise."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Foam
+jlho:Foam rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Colloid ;
+           jlhao:prefLabel "Foam"@en-us ;
+           jlhao:definition "A colloid where gas is dispersed in a liquid or solid."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#FoodProcessingMethod
+jlho:FoodProcessingMethod rdf:type owl:Class ;
+              rdfs:subClassOf jlho:ProcessingMethod ;
+              jlhao:prefLabel "Food Processing Method"@en-us ;
+              jlhao:definition "A series of techniques or operations used to transform materials into a more usable or consumable form."@en-us ;
+              jlhao:usageNote "Subclasses, such as Physical, Chemical and Traditional, can be added to further refine types of methods. As well, instances of this class can be created without additional hierarchy structure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Formula
+jlho:Formula rdf:type owl:Class ;
+              rdfs:subClassOf jlho:SpecificationDocument ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty jlho:includesFormulaLine ;
+                                owl:someValuesFrom jlho:FormulaLine
+                              ] ;
+              jlhao:prefLabel "Formula"@en-us ;
+              jlhao:definition "A specific type of specification that outlines ingredients and proportions for process-based manufacturing."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#FormulaLine
+jlho:FormulaLine rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Specification ;
+                  jlhao:prefLabel "Formula Line"@en-us ;
+                  jlhao:definition "A contextual usage of an ingredient in a formula."@en-us ;
+                  jlhao:exampleValues "Formula XXX L001, L1 of Formula XXX"@en-us ;
+                  jlhao:usageNote "Since a formula contains multiple ingredients, adding a line count to the instance label is a good practice."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#FormulaProcess
+jlho:FormulaProcess rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Process ;
+                     jlhao:prefLabel "Formula Process"@en-us ;
+                     jlhao:definition "A line of the formula that explains how to incorporate the ingredients."@en-us ;
+                     jlhao:exampleValues "Formula XXX P001, P1 of Formula XXX"@en-us ;
+                     jlhao:usageNote "Since a formula can contain multiple processes, adding a line count to the instance label is a good practice."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#FormulaVersion
+jlho:FormulaVersion rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Version ;
+                     jlhao:prefLabel "Formula Version"@en-us ;
+                     jlhao:definition "A specific revision of a formula."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#Framework
+jlho:Framework rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Scheme ;
+           jlhao:prefLabel "Framework"@en-us ;
+            jlhao:scopeNote "Often prescriptive or guiding, not necessarily enumerating items or rules for combination."@en-us ;
+            jlhao:usageNote "Use when modeling overarching guidelines or governance structures that enable/shape other systems or standards."@en-us ;
+            jlhao:definition "A conceptual structure that provides guidelines, constraints, or high-level organization for how things should be done."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Furniture
+jlho:Furniture rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Object ;
+                jlhao:prefLabel "Furniture"@en-us ;
+                jlhao:definition "A free-standing furnishing."@en-us ;
+                jlhao:exampleValues "Desk, Chair, Shelf, Cabinet"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Gel
+jlho:Gel rdf:type owl:Class ;
+          rdfs:subClassOf jlho:Colloid ;
+          jlhao:prefLabel "Gel"@en-us ;
+          jlhao:definition "A colloid where liquid is dispersed within a solid network."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#GeographicLocation
+jlho:GeographicLocation rdf:type owl:Class ;
+                         rdfs:subClassOf jlho:Location ;
+                         jlhao:prefLabel "Geographic Location"@en-us ;
+                         jlhao:definition "A specific place, described by its position and features."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#GovernanceDocument
+jlho:GovernanceDocument rdf:type owl:Class ;
+                         rdfs:subClassOf jlho:Document ;
+                         jlhao:prefLabel "Governance Document"@en-us ;
+                         jlhao:definition "A document or class of documents used to establish and maintain order, consistency, and compliance within an organization or system."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Group
+jlho:Group rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Entity ;
+                jlhao:prefLabel "Group"@en-us ;
+                jlhao:definition "A number of people or things that are considered or classed together. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Guideline
+jlho:Guideline rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Principle ;
+                jlhao:prefLabel "Guideline"@en-us ;
+                jlhao:definition "An instance of or set of best practices or recommendations to support the implementation of policies, standards, and procedures. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#GuidelinesDocument
+jlho:GuidelinesDocument rdf:type owl:Class ;
+                         rdfs:subClassOf jlho:GovernanceDocument ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty jlho:includesGuideline ;
+                                           owl:someValuesFrom jlho:Guideline
+                                         ] ;
+                         jlhao:prefLabel "Guidelines Document"@en-us ;
+                         jlhao:definition "A document containing one or more guidelines."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Hazard
+jlho:Hazard rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Phenomenon ;
+             jlhao:prefLabel "Hazard"@en-us ;
+             jlhao:definition "A process, phenomenon or human activity that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#HierarchyLevel
+jlho:HierarchyLevel rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Ranking ;
+             jlhao:prefLabel "Hierarchy Level"@en-us ;
+             jlhao:definition "A rank or tier within a system that ranks individuals or items from highest to lowest."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#HeterogeneousMixture
+jlho:HeterogeneousMixture rdf:type owl:Class ;
+                           rdfs:subClassOf jlho:Mixture ;
+                           jlhao:prefLabel "Heterogeneous Mixture"@en-us ;
+                           jlhao:definition "A mixture with non-uniform composition; components may be visibly distinct."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#HomogeneousMixture
+jlho:HomogeneousMixture rdf:type owl:Class ;
+                         rdfs:subClassOf jlho:Mixture ;
+                         jlhao:prefLabel "Homogeneous Mixture"@en-us ;
+                         jlhao:definition "A mixture with uniform composition throughout."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Hormone
+jlho:Hormone rdf:type owl:Class ;
+              rdfs:subClassOf jlho:BiologicalSubstance ;
+              jlhao:prefLabel "Hormone"@en-us ;
+              jlhao:definition "A regulatory substance produced in an organism that stimulate specific cells or tissues into action."@en-us ;
+              jlhao:exampleValues "Insulin, Melatonin"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#IPAddress
+jlho:IPAddress rdf:type owl:Class ;
+                rdfs:subClassOf jlho:DigitalLocation ;
+                jlhao:prefLabel "IP Address"@en-us ;
+                jlhao:definition "A unique string of characters that identifies each computer using the Internet Protocol to communicate over a network."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Identifier
+jlho:Identifier rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Intangible ;
+                 jlhao:prefLabel "Identifier"@en-us ;
+                 jlhao:definition "Something, such as an ID or code, that identifies something."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#IdentifierRole
+jlho:IdentifierRole rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Role ;
+                     jlhao:prefLabel "Identifier Role"@en-us ;
+                     jlhao:definition "A function assumed or part played by an identifier."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Impact
+jlho:Impact rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Consequence ;
+             jlhao:prefLabel "Impact"@en-us ;
+             jlhao:definition "The effect or influence that a person, thing or action can have on something else."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ImplementationStage
+jlho:ImplementationStage rdf:type owl:Class ;
+                          rdfs:subClassOf jlho:Stage ;
+                          jlhao:prefLabel "Implementation Stage"@en-us ;
+                          jlhao:definition "The phase where the plan or design is put into action, involving the execution of activities and the production of deliverables to achieve project objectives. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Indicator
+jlho:Indicator rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Measure ;
+                jlhao:prefLabel "Indicator"@en-us ;
+                jlhao:definition "A measurement or value which gives you an idea of what something is like."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#InformationTechnology
+jlho:InformationTechnology rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Technology ;
+             jlhao:prefLabel "Information Technology"@en-us ;
+             jlhao:definition "The use of computers, telecommunication systems and other devices to create, process, store, retrieve and transmit information."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Ingredient
+jlho:Ingredient rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Material ;
+                 jlhao:prefLabel "Ingredient"@en-us ;
+                 jlhao:definition "A processed or raw material intentionally combined or included in product formulation."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#IngredientClass
+jlho:IngredientClass rdf:type owl:Class ;
+              rdfs:subClassOf jlho:IngredientFamily ;
+              jlhao:prefLabel "Ingredient Class"@en-us ;
+              jlhao:definition "Third level of ingredient Primary Hierarchy Classification."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#IngredientFamily
+jlho:IngredientFamily rdf:type owl:Class ;
+              rdfs:subClassOf jlho:IngredientSegment ;
+              jlhao:prefLabel "Ingredient Family"@en-us ;
+              jlhao:definition "Second level of ingredient Primary Hierarchy Classification."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#IngredientSegment
+jlho:IngredientSegment rdf:type owl:Class ;
+              rdfs:subClassOf jlho:IngredientPrimaryHierarchyClassification ;
+              jlhao:prefLabel "Ingredient Segment"@en-us ;
+              jlhao:definition "First level of ingredient Primary Hierarchy Classification."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#IngredientPrimaryHierarchyClassification
+jlho:IngredientPrimaryHierarchyClassification rdf:type owl:Class ;
+              rdfs:subClassOf jlho:ClassificationScheme ;
+              jlhao:prefLabel "Ingredient Primary Hierarchy Classification"@en-us ;
+              jlhao:definition "Internal classification of ingredients."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#InorganicCompound
+jlho:InorganicCompound rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:ChemicalCompound ;
+                        jlhao:prefLabel "Inorganic Compound"@en-us ;
+                        jlhao:definition "A chemical compound that does not contain both carbon and hydrogen in its molecular structure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Intangible
+jlho:Intangible rdf:type owl:Class ;
+                 jlhao:prefLabel "Intangible"@en-us ;
+                 jlhao:definition "An abstract quality or attribute; something not having a physical presence."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#InternalID
+jlho:InternalID rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Identifier ;
+                 jlhao:prefLabel "Internal ID"@en-us ;
+                 jlhao:definition "A unique numeric identifier assigned to a record, used for internal referencing and management."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Land
+jlho:Land rdf:type owl:Class ;
+           rdfs:subClassOf jlho:PhysicalLocation ;
+           jlhao:prefLabel "Land"@en-us ;
+           jlhao:definition "An area of ground with specific boundaries."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Language
+jlho:Language rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Intangible ;
+               jlhao:prefLabel "Language"@en-us ;
+               jlhao:definition "A system of communication."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#LegalDocument
+jlho:LegalDocument rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:Document ;
+                    jlhao:prefLabel "Legal Document"@en-us ;
+                    jlhao:definition "A document specifying the terms of, or provides evidence for, an agreement, attestation, certification, conditions, permissions, and/or decisions of legal persons, government entities, or courts of law, drawn up in accordance with certain rules that apply in the relevant jurisdiction(s)."@en-us ;
+                    jlhao:scopeNote "A legal document bears the original, official, or legal form of something, that can be fully attributed to its author(s), that records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right and that can be used to furnish decisive evidence for that act, process, or agreement."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Lifecycle
+jlho:Lifecycle rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Stage ;
+                jlhao:prefLabel "Lifecycle"@en-us ;
+                jlhao:definition "A series of stages in form and functional activity."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#LifecycleEvent
+jlho:LifecycleEvent rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Phenomenon ;
+                     jlhao:prefLabel "Lifecycle Event"@en-us ;
+                     jlhao:definition "A significant occurrence that marks a change or transition in the state of something, such as an individual, a product, or a system."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#List
+jlho:List rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Collection ;
+           jlhao:prefLabel "List"@en-us ;
+           jlhao:definition "A collection containing a finite, ordered set of related items, where the same value may occur more than once."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Location
+jlho:Location rdf:type owl:Class ;
+               jlhao:prefLabel "Location"@en-us ;
+               jlhao:definition "A particular place or position."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Manual
+jlho:Manual rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Document ;
+             jlhao:prefLabel "Manual"@en-us ;
+             jlhao:definition "A small book giving information or instructions."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#MarketingCampaign
+jlho:MarketingCampaign rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:Campaign ,
+                                        jlho:Occasion ;
+                        jlhao:prefLabel "Marketing Campaign"@en-us ;
+                        jlhao:definition "An organized course of action to promote and sell a product or service."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Material
+jlho:Material rdf:type owl:Class ;
+               rdfs:subClassOf jlho:PhysicalThing ;
+               jlhao:prefLabel "Material"@en-us ;
+               jlhao:definition "A physical thing that is used, consumed, transformed, or produced in the supply chain."@en-us ;
+               jlhao:note "Company Atlan Glossary: Subject area that includes concepts associated with anything inert or living which is used to to produce desired products."@en-us ;
+               jlhao:references "https://company.atlan.com/glossary/72c1993d-5556-47d2-a1ba-80252cd0f871/overview"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#MaterialRole
+jlho:MaterialRole rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:Role ;
+                   jlhao:prefLabel "Material Role"@en-us ;
+                   jlhao:definition "A function assumed or part played by a material."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Measure
+jlho:Measure rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Intangible ;
+              jlhao:prefLabel "Measure"@en-us ;
+              jlhao:definition "Something that can be observed and involves a measurement."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Measurement
+jlho:Measurement rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Measure ;
+                  jlhao:prefLabel "Measurement"@en-us ;
+                  jlhao:definition "The size, length, or amount of something, as established by measuring."@en-us ;
+                  jlhao:usageNote "A measurement combines a number to a unit of measurement."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#MechanicalMixture
+jlho:MechanicalMixture rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:HeterogeneousMixture ;
+                        jlhao:prefLabel "Mechanical Mixture"@en-us ;
+                        jlhao:definition "A heterogeneous mixture with distinct, visible components."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Meeting
+jlho:Meeting rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Occasion ;
+              jlhao:prefLabel "Meeting"@en-us ;
+              jlhao:definition "An occurance of persons assembling for a specific purpose."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Metal
+jlho:Metal rdf:type owl:Class ;
+            rdfs:subClassOf jlho:EngineeredMaterial ;
+            jlhao:prefLabel "Metal"@en-us ;
+            jlhao:definition "A solid material that is typically hard, shiny, malleable, and conductive, consisting of one type of metallic element."@en-us ;
+            jlhao:exampleValues "Iron, Copper, Aluminum"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Method
+jlho:Method rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Intangible ;
+             jlhao:prefLabel "Method"@en-us ;
+             jlhao:definition "An element or set of elements that defines procedures, techniques, plans or other orderly, logical or systematic functions or descriptions."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Mixture
+jlho:Mixture rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Substance ;
+              jlhao:prefLabel "Mixture"@en-us ;
+              jlhao:definition "A combination of two or more substances that are physically combined but not chemically bonded."@en-us ;
+              jlhao:exampleValues "Air, Seawater, Crude Oil, Salad Dressing"@en-us ;
+              jlhao:explanatoryNote "The components retain their individual properties and can usually be separated by physical means."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#Nanomaterial
+jlho:Nanomaterial rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:EngineeredMaterial ;
+                   jlhao:prefLabel "Nanomaterial"@en-us ;
+                   jlhao:definition "A material engineered or occurring at the nanoscale, with unique physical or chemical properties due to its structure."@en-us ;
+                   jlhao:exampleValues "Carbon Nanotubes, Nanosilica, Graphene, QuantumDot"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#NaturalLanguage
+jlho:NaturalLanguage rdf:type owl:Class ;
+                      rdfs:subClassOf jlho:Language ;
+                      jlhao:prefLabel "Natural Language"@en-us ;
+                      jlhao:definition "A language that has developed and evolved naturally through use by human beings."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Nomenclature
+jlho:Nomenclature rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:StandardizationFramework ;
+                     jlhao:prefLabel "Nomenclature"@en-us ;
+                     jlhao:associatedProperties "->governs-> NomenclatureSet, NomenclatureSet->isDefinedBy->."@en-us ;
+                     jlhao:definition "A systematic and standardized way of assigning names to things that provides clear, consistent, and unambiguous identifiers that facilitate communication, classification, and understanding within a specific context."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#NomenclatureSet
+jlho:NomenclatureSet rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:StandardizationSet ;
+                     jlhao:prefLabel "Nomenclature Set"@en-us ;
+                    # jlhao:explanatoryNote "A set models the outcome or collection, whereas a system models the framework or rules that produce or organize the collection."@en-us ;
+                     jlhao:scopeNote "The members of a set don't have to interact with each other - they just belong together under some unifying characteristic."@en-us ;
+                    # jlhao:associatedProperties "NomenclatureSystem defines NomenclatureSet, NomenclatureSet isDefinedBy NomenclatureSystem."@en-us ;
+                     jlhao:definition "A set of names produced under a nomenclature framework."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Object
+jlho:Object rdf:type owl:Class ;
+             rdfs:subClassOf jlho:PhysicalThing ;
+             jlhao:prefLabel "Object"@en-us ;
+             jlhao:definition "A human-made tangible thing."@en-us ;
+             jlhao:scopeNote "A human-made object in the supply chain context should be categorized under the Material class."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Observation
+jlho:Observation rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Activity ;
+                  jlhao:prefLabel "Observation"@en-us ;
+                  jlhao:definition "An act or instance of noticing or perceiving."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Occasion
+jlho:Occasion rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Event ;
+               jlhao:prefLabel "Occasion"@en-us ;
+               jlhao:definition "An event taking place at a certain point in time and involving the participation of people."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Office
+jlho:Office rdf:type owl:Class ;
+             rdfs:subClassOf jlho:PhysicalLocation ;
+             jlhao:prefLabel "Office"@en-us ;
+             jlhao:definition "A room, set of rooms, or building used as a place for commercial, professional, or bureaucratic work."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#OrderedCollection
+jlho:OrderedCollection rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:Collection ;
+                        jlhao:prefLabel "Ordered Collection"@en-us ;
+                        jlhao:definition "A structured collection whose elements are ordered in some method."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#OrganicCompound
+jlho:OrganicCompound rdf:type owl:Class ;
+                      rdfs:subClassOf jlho:ChemicalCompound ;
+                      jlhao:prefLabel "Organic Compound"@en-us ;
+                      jlhao:definition "A compound that contain carbon, and typically also includes hydrogen, along with other elements like oxygen, nitrogen, or sulfur."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Organism
+jlho:Organism rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:Entity ;
+               jlhao:prefLabel "Organism"@en-us ;
+               jlhao:definition "A form of life, including plants and animals."@en-us ;
+               jlhao:scopeNote "Use the Person class for humans."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Organization
+jlho:Organization rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:Entity ;
+                   jlhao:prefLabel "Organization"@en-us ;
+                   jlhao:definition "A framework of authority within which a person, persons, or groups of people act, or are designated to act, towards some purpose, such as to meet a need or pursue collective goals."@en-us ;
+                   jlhao:explanatoryNote "This may be a business entity, government, international organization, not-for-profit, academic institution, or other unincorporated and/or informal social organization."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#OrganizationalChange
+jlho:OrganizationalChange rdf:type owl:Class ;
+                           rdfs:subClassOf jlho:ChangeEvent ;
+                           jlhao:prefLabel "Organizational Change"@en-us ;
+                           jlhao:definition "The actions a company takes to alter a major component of its structure, processes, culture, or technology to adapt to internal or external pressures and improve performance."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#OrganizationBasedStandardization
+jlho:OrganizationBasedStandardization rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Standardization ;
+               jlhao:prefLabel "Organization-Based Standardization"@en-us ;
+                jlhao:usageNote "Use for institutionally-backed or authorative standardization."@en-us ;
+               jlhao:definition "A form of standardization established and maintained by an authoritative body, governing organization, or recognized community of practice, typically documented as standards or classification systems."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#OrganizationMember
+jlho:OrganizationMember rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:EntityRole ;
+                         jlhao:prefLabel "Organization Member"@en-us ;
+                         jlhao:definition "Entity (person or organization) that has a membership role with respect to some organization."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#OrganizationRole
+jlho:OrganizationRole rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:EntityRole ;
+                       jlhao:prefLabel "Organization Role"@en-us ;
+                       jlhao:definition "A function assumed or part played by an organization."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Packaging
+jlho:Packaging rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Material ;
+                jlhao:prefLabel "Packaging"@en ;
+                jlhao:definition "Material used to enclose or protect products for distribution, storage, sale, and use."@en-us ;
+               jlhao:note "Company Atlan Glossary: Packaging Materials are the components used to enclose or protect products for distribution, storage, sale, and use."@en-us ;
+               jlhao:references "https://company.atlan.com/glossary/8e7b7340-1e28-4e42-b1e5-6f90e75bbfcd/overview"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Paper
+jlho:Paper rdf:type owl:Class ;
+            rdfs:subClassOf jlho:EngineeredMaterial ;
+            jlhao:prefLabel "Paper"@en-us ;
+            jlhao:definition "A thin material produced by pressing together moist cellulose fibers from wood, rags, or grasses, used for writing, packaging, and industrial applications."@en-us ;
+            jlhao:exampleValues "Cardboard, Tissue Paper"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Person
+jlho:Person rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Entity ;
+             jlhao:prefLabel "Person"@en-us ;
+             jlhao:definition "A person or an entity with human qualities."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Persona
+jlho:Persona rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Person ;
+              jlhao:prefLabel "Persona"@en-us ;
+              jlhao:definition "A fictional, semi-fictional, or idealized representation of a target user or customer group, based on research and data, that helps designers and marketers understand their audience's needs, behaviors, and goals. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#PersonRole
+jlho:PersonRole rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:EntityRole ;
+                 jlhao:prefLabel "Person Role"@en-us ;
+                 jlhao:definition "A function assumed or part played by a person."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Phenomenon
+jlho:Phenomenon rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Event ;
+                 jlhao:prefLabel "Phenomenon"@en-us ;
+                 jlhao:definition "An observable happening or event."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#PhysicalLocation
+jlho:PhysicalLocation rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:Location ;
+                       jlhao:prefLabel "Physical Location"@en-us ;
+                       jlhao:definition "A specific place where an object, person, or entity is situated in the physical world."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#PhysicalThing
+jlho:PhysicalThing rdf:type owl:Class ;
+                    jlhao:prefLabel "Physical Thing"@en-us ;
+                    jlhao:definition "An item that can be seen, touched or felt, or is otherwise known."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#PlanningStage
+jlho:PlanningStage rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:Stage ;
+                    jlhao:prefLabel "Planning Stage"@en-us ;
+                    jlhao:definition "The phase of a project or initiative where the scope, objectives, tasks, resources, schedule, and budget are defined, and a plan is developed to achieve the desired outcomes."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Plant
+jlho:Plant rdf:type owl:Class ;
+            rdfs:subClassOf jlho:PhysicalLocation ;
+            jlhao:prefLabel "Plant"@en-us ;
+            jlhao:definition "A place where an industrial or manufacturing process takes place."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Policy
+jlho:Policy rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Principle ;
+             jlhao:prefLabel "Policy"@en-us ;
+             jlhao:definition "A broad, high-level statement that reflect an organization’s goals, objectives, and culture."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Polymer
+jlho:Polymer rdf:type owl:Class ;
+              rdfs:subClassOf jlho:EngineeredMaterial ;
+              jlhao:prefLabel "Polymer"@en-us ;
+              jlhao:definition "A material consisting of large molecular chains (macromolecules) made from repeating subunits, including both synthetic plastics and natural polymers."@en-us ;
+              jlhao:exampleValues "Biopolymer (e.g., Cellulose, Starch, Chitosan, Lignin)"@en-us ,
+                                   "Natural polymers (e.g., Rubber)"@en-us ,
+                                   "Synthetic plastics (e.g., Polyethylene(PE), Polypropylene (PP), Polystyrene (PS), Polyvinyl Chloride (PVC), Nylon, Teflon)"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Principle
+jlho:Principle rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Intangible ;
+                jlhao:prefLabel "Principle"@en-us ;
+                jlhao:definition "A fundamental truth or proposition that serves as the foundation for a system of belief or behavior or for a chain of reasoning."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Procedure
+jlho:Procedure rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Principle ;
+                jlhao:prefLabel "Procedure"@en-us ;
+                jlhao:definition "A detailed, step-by-step instruction or set of instructions that outlines how to perform specific tasks within a process, ensuring consistency and compliance with policies and standards. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ProceduresDocument
+jlho:ProceduresDocument rdf:type owl:Class ;
+                         rdfs:subClassOf jlho:GovernanceDocument ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty jlho:includesProcedure ;
+                                           owl:someValuesFrom jlho:Procedure
+                                         ] ;
+                         jlhao:prefLabel "Procedures Document"@en-us ;
+                         jlhao:definition "A document containing one or more procedures."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Process
+jlho:Process rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Method ;
+              jlhao:prefLabel "Process"@en-us ;
+              jlhao:definition "A process is a set of interrelated or interacting steps or activities which transforms inputs into outputs."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ProcessingMethod
+jlho:ProcessingMethod rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Method ;
+              jlhao:prefLabel "Processing Method"@en-us ;
+              jlhao:definition "A series of techniques or operations used to transform raw data, materials, or information into a more usable or consumable form."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Product
+jlho:Product rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Material ;
+              jlhao:prefLabel "Product"@en ;
+              jlhao:definition "Either a service or a manufactured good sold to another party."@en-us ;
+               jlhao:note "Company Atlan Glossary: A Product is an article that is manufactured, refined, (dis)assembled, stored, crushed, moved and/or resold or a service offered to customers, which brings revenue or profit to, at least, one Enterprise in Company. It must have a price that will be paid by the customer, a place where it is processed and sold, and a promotional strategy (public relations) around it. Commonly, a product is also called a finished good, tradable commodity or marketable service."@en-us ;
+               jlhao:references "https://company.atlan.com/glossary/defd7220-f75d-409e-bfa3-1e492abcffe9/overview"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Project
+jlho:Project rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Intangible ;
+              jlhao:prefLabel "Project"@en-us ;
+              jlhao:definition "An individual or collaborative enterprise that is carefully planned to achieve a particular aim."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Protein
+jlho:Protein rdf:type owl:Class ;
+              rdfs:subClassOf jlho:BiologicalSubstance ;
+              jlhao:prefLabel "Protein"@en-us ;
+              jlhao:definition "An essential molecule made up of amino acids that serves as a building block for many body structures and performs various functions within cells."@en-us ;
+              jlhao:exampleValues "Collagen, Hemoglobin"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Quantity
+jlho:Quantity rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Measurement ,
+              # must have exactly 1 :hasUOMDimension -> :UOMDimension
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty :hasUOMDimension ;
+                  owl:someValuesFrom :Dimension
+                ] ,
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty :hasUOMDimension ;
+                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                ] ,
+              # must have exactly 1 :hasUOM -> :UnitOfMeasure
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty :hasUOM ;
+                  owl:someValuesFrom :UnitOfMeasure
+                ] ,
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty :hasUOM ;
+                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                ] ,
+              # must have 1 or more :quantityValue -> constant (Datatype)
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty :quantityValue ;
+                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                ] ;
+               jlhao:prefLabel "Quantity"@en-us ;
+               jlhao:definition "The measurement of an observable property of a particular object, event, or physical system."@en-us ;
+               jlhao:usageNote "A quantity is a quantifiable aspect of the world and is associated with the context of measurement (i.e. the thing measured, the measured value, the accuracy of measurement, etc.)."@en-us ;
+               jlhao:example "A quantity in this context might include the duration of a movie, the distance between two points, velocity of a car, the pressure of the atmosphere, and a person's weight; and units are used to describe the numerical measure."@en-us ;
+                jlhao:requiredProperties "ExplicitTime->hasTimeValue"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Ranking
+jlho:Ranking rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Intangible ;
+             jlhao:prefLabel "Ranking"@en-us ;
+             jlhao:definition "A classification or ranking of someone or something based on a comparative assessment of their quality, standard, or performance."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ReferenceDocument
+jlho:ReferenceDocument rdf:type owl:Class ;
+                        rdfs:subClassOf jlho:Document ;
+                        jlhao:prefLabel "Reference Document"@en-us ;
+                        jlhao:definition "A document that is used as a reference for something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Region
+jlho:Region rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:GeographicLocation ;
+                       jlhao:prefLabel "Region"@en-us ;
+                       jlhao:definition "An area of land that has common features."@en-us ;
+                       jlhao:explanatoryNote "A region may be defined by natural or artificial features, and may be described as part of a country or the world having definable characteristics but not always fixed boundaries."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#ResearchOrganization
+jlho:ResearchOrganization rdf:type owl:Class ;
+                           rdfs:subClassOf jlho:Organization ;
+                           jlhao:prefLabel "Research Organization"@en-us ;
+                           jlhao:definition "An entity that conducts data collection and analysis to produce statistics and inform public policy, often associated with universities or non-profit organizations. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Retail
+jlho:Retail rdf:type owl:Class ;
+             rdfs:subClassOf jlho:PhysicalLocation ;
+             jlhao:prefLabel "Retail"@en-us ;
+             jlhao:definition "A physical space where a business sells goods or services directly to consumers, such as a store, mall, or shopping center."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Role
+jlho:Role rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Activity ;
+           jlhao:prefLabel "Role"@en-us ;
+           jlhao:definition "A function assumed or part played by a thing in a particular situation."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#RuleBasedStandardization
+jlho:RuleBasedStandardization rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Standardization ;
+               jlhao:prefLabel "Rule-Based Standardization"@en-us ;
+                jlhao:usageNote "Use for procedural, codified or logical standardization."@en-us ;
+               jlhao:definition "A form of standardization defined by formal rules, procedures, or methods that govern how entities are named, organized, or operated."@en-us .
+
+
+##  https://semantic-data.jlh.com/im/jlho#Scheme
+jlho:Scheme rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Method ;
+           jlhao:prefLabel "Scheme"@en-us ;
+           jlhao:definition "A designed plan, arrangement, or method for organizing or applying something."@en-us ;
+          jlhao:example "Color-coding schemes (e.g., resistor color code system), Encryption schemes (rule-based, not taxonomic), Measurement schemes (how measurements are scaled or applied)."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#Season
+jlho:Season rdf:type owl:Class ;
+             rdfs:subClassOf jlho:TimeInterval ;
+             jlhao:prefLabel "Season"@en-us ;
+             jlhao:definition "Any general period of time."@en-us ;
+             jlhao:example "A period of year characterized by weather conditions, such as 'rainy season'; a period of year marked by certain conditions, such as 'baseball season'; a period of year around a holiday, such as 'Christmas season'."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#SeasonOfYear
+jlho:SeasonOfYear rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:TimeInterval ;
+                   jlhao:prefLabel "Season Of Year"@en-us ;
+                   jlhao:definition "One of the four periods of the year, beginning astronomically at an equinox or solstice, but geographically at different dates in different climates."@en-us ;
+                jlhao:exampleValues "Spring, Summer, Autumn, Winter"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Service
+jlho:Service rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Activity ;
+              jlhao:prefLabel "Service"@en-us ;
+              jlhao:definition "Work done or help provided for the public or for a person or an organization."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#ServiceProvider
+jlho:ServiceProvider rdf:type owl:Class ;
+                          rdfs:subClassOf jlho:EntityRole ;
+                          jlhao:prefLabel "Service Provider"@en-us ;
+                      jlhao:definition "Role of an entity that provides some service, including but not limited to commercial or professional services"@en-us ;
+                      jlhao:example "Example services may include consulting, financial, legal, real estate, education, communications, registration, regulatory, manufacturing, storage, processing, or other services."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Set
+jlho:Set rdf:type owl:Class ;
+          rdfs:subClassOf jlho:Collection ;
+          jlhao:prefLabel "Set"@en-us ;
+          jlhao:definition "An assembly of distinct objects or concepts considered as a whole."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#SetOfStandards
+jlho:SetOfStandards rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:OrganizationBasedStandardization, jlho:Set ;
+                     jlhao:prefLabel "Set Of Standards"@en-us ;
+                     jlhao:usageNote "Use for standards governance, publishing, or compliance."@en-us ;
+                    #  jlhao:associatedProperties "StandardizationSystem defines StandardizationSet, StandardizationSet isDefinedBy StandardizationSystem."@en-us ;
+                     jlhao:definition "A curated bundle of normative documents that collectively specifies or governs a standardized set."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Solution
+jlho:Solution rdf:type owl:Class ;
+               rdfs:subClassOf jlho:HomogeneousMixture ;
+               jlhao:prefLabel "Solution"@en-us ;
+               jlhao:definition "A homogeneous mixture where one substance (solute) is dissolved in another (solvent)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Specification
+jlho:Specification rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:Intangible ;
+                    jlhao:prefLabel "Specification"@en-us ;
+                    jlhao:definition "An explicit requirement or set of requirements to be satisfied by something, such as a product, material, model, process or system."@en-us .
+
+
+# ###  https://semantic-data.jlh.com/im/jlho#SpecificationDocument
+jlho:SpecificationDocument rdf:type owl:Class ;
+                            rdfs:subClassOf jlho:ReferenceDocument ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty jlho:includesSpecification ;
+                                              owl:someValuesFrom jlho:Specification
+                                            ] ;
+                            jlhao:prefLabel "Specification Document"@en-us ;
+                            jlhao:definition "A document that sets out detailed requirements to be satisfied by a product, material, process or system and the procedures for checking conformity to these requirements."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Stage
+jlho:Stage rdf:type owl:Class ;
+            rdfs:subClassOf jlho:Method ;
+            jlhao:prefLabel "Stage"@en-us ;
+            jlhao:definition "Step, phase, period or position within a process, development or series."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Standard
+jlho:Standard rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Principle, jlho:Standardization ;
+               jlhao:prefLabel "Standard"@en-us ;
+               jlhao:definition "A specific, measurable requirement that must be met to ensure quality, consistency, and compliance with policies and procedures. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Standardization
+jlho:Standardization rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Method ;
+               jlhao:prefLabel "Standardization"@en-us ;
+               jlhao:definition "The process of establishing and implementing consistent, uniform guidelines, specifications, and practices to ensure uniformity and compatibility among products, services, processes, or systems."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#StandardizationFramework
+jlho:StandardizationFramework rdf:type owl:Class ;
+           rdfs:subClassOf jlho:RuleBasedStandardization, jlho:Framework ;
+           jlhao:prefLabel "Standardization Framework"@en-us ;
+            jlhao:scopeNote "Often prescriptive or guiding, not necessarily enumerating items or rules for combination."@en-us ;
+            jlhao:usageNote "Use when modeling overarching guidelines or governance structures that enable/shape standards."@en-us ;
+           jlhao:definition "A conceptual structure that provides guidelines, constraints, or high-level organization for standardization."@en-us .
+
+
+# ###  https://semantic-data.jlh.com/im/jlho#StandardizationGrouping
+jlho:StandardizationGrouping rdf:type owl:Class ;
+          rdfs:subClassOf jlho:StandardizationSet, jlho:Categorization ;
+          jlhao:prefLabel "StandardizationGrouping"@en-us ;
+          jlhao:usageNote "Use to represent ad hoc or domain-specific collections that may or may not come from a formal standard."@en-us ;
+          jlhao:explanatoryNote "A grouping will have no requirement for internal logic (like a system), prescriptive governance (like a framework), hierarchy (like a classification), or formal standardization (like a set of standards)."@en-us ;
+          jlhao:definition "A pragmatic collection of things brought together under some chosen criterion."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#StandardizationSet
+jlho:StandardizationSet rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:CollectionBasedStandardization, jlho:Set ;
+                     jlhao:prefLabel "Standardization Set"@en-us ;
+                     jlhao:explanatoryNote "A set models the outcome or collection, whereas a system models the framework or rules that produce or organize the collection."@en-us ;
+                     jlhao:scopeNote "The members of a set don't have to interact with each other - they just belong together under some unifying characteristic."@en-us ;
+                     jlhao:usageNote "Use for measurement, nomenclature, controlled vocabularies, code lists, etc."@en-us ;
+                     jlhao:associatedProperties "StandardizationSystem produces StandardizationSet, StandardizationSet isDefinedBy StandardizationSystem."@en-us ;
+                     jlhao:definition "A collection of standardized items or artifacts produced by some system, framework or standard."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#StandardizationSystem
+jlho:StandardizationSystem rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:RuleBasedStandardization, jlho:System ;
+                     jlhao:prefLabel "Standardization System"@en-us ;
+                     jlhao:explanatoryNote "A system models the framework or rules that produce or organize the collection, whereas a set models the outcome or collection."@en-us ;
+                     jlhao:associatedProperties "StandardizationSystem produces StandardizationSet, StandardizationSet efinedBy StandardizationSystem."@en-us ;
+                     jlhao:definition "An organized, governed framework of rules, principles, or conventions that generate, structure or constrain a set of things."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#StandardsOrganization
+jlho:StandardsOrganization rdf:type owl:Class ;
+                     rdfs:subClassOf jlho:Organization, jlho:Standardization ;
+                     jlhao:prefLabel "Standards Organization"@en-us ;
+                     jlhao:associatedProperties "StandardsOrganization publishes StandardizationSystem, StandardsOrganization publishes StandardizationSet, StandardizationSet publishedBy StandardsOrganization, StandardizationSystem publishedBy StandardsOrganization."@en-us ;
+                     jlhao:definition "An organization whose primary function is developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise contributing to the usefulness of technical standards."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#State
+jlho:State rdf:type owl:Class ;
+            rdfs:subClassOf jlho:GeographicLocation ;
+            jlhao:prefLabel "State"@en-us ;
+            jlhao:definition "A self-governing geopolitical unit which forms part of a wider geopolitical unit that is recognized as a country. Synonyms include: Federal State, Canton, Province."@en-us ;
+            jlhao:synonym "Canton"@en-us ,
+                           "Province"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Status
+jlho:Status rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Intangible ;
+             jlhao:prefLabel "Status"@en-us ;
+             jlhao:definition "Any condition in which an object, person or organism can be in."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Storage
+jlho:Storage rdf:type owl:Class ;
+              rdfs:subClassOf jlho:PhysicalLocation ;
+              jlhao:prefLabel "Storage"@en-us ;
+              jlhao:definition "A designated area or facility where goods or materials are stored, organized to optimize space, accessibility, and operational efficiency. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Strategy
+jlho:Strategy rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Method ;
+               jlhao:prefLabel "Strategy"@en-us ;
+               jlhao:definition "A high level plan of action or policy designed for a long-range or major aim."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Substance
+jlho:Substance rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Material ;
+                jlhao:prefLabel "Substance"@en-us ;
+                jlhao:definition "A basic physical matter with consistent properties."@en-us ;
+                jlhao:usageNote "Raw matter used to derive material."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Suspension
+jlho:Suspension rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:HeterogeneousMixture ;
+                 jlhao:prefLabel "Suspension"@en-us ;
+                 jlhao:definition "A heterogeneous mixture where solid particles are dispersed in a liquid and settle over time."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Sustainability
+jlho:Sustainability rdf:type owl:Class ;
+                rdfs:subClassOf jlho:FieldOfPractice ;
+                jlhao:prefLabel "Sustainability"@en-us ;
+                jlhao:definition "The management of resources to meet present needs without compromising the ability of future generations to meet their own needs."@en-us ; 
+                jlhao:note "This field integrates three pillars - environmental, social, and economic - to create systems that are balanced, long-lasting, and responsible, encompassing strategies like resource efficiency, conservation, and social equity. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#System
+jlho:System rdf:type owl:Class ;
+             rdfs:subClassOf jlho:Method ;
+             jlhao:prefLabel "System"@en-us ;
+             jlhao:definition "A combination of interacting elements organized to achieve one or more stated purposes."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#SystemUser
+jlho:SystemUser rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:EntityRole;
+                 jlhao:prefLabel "System User"@en-us ;
+                 jlhao:definition "An individual (or entity) who interacts with a software application, system, or service to perform tasks or access information."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Technology
+jlho:Technology rdf:type owl:Class ;
+                rdfs:subClassOf jlho:FieldOfPractice ;
+                jlhao:prefLabel "Technology"@en-us ;
+                jlhao:definition "The application of scientific knowledge for practical purposes, especially in industry. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Territory
+jlho:Territory rdf:type owl:Class ;
+                rdfs:subClassOf jlho:GeographicLocation ;
+                jlhao:prefLabel "Territory"@en-us ;
+                jlhao:definition "A geographic area, typically considered an area of special geopolitical interest, subject to the sovereignty, control, or jurisdiction of a state or other entity."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Textile
+jlho:Textile rdf:type owl:Class ;
+              rdfs:subClassOf jlho:EngineeredMaterial ;
+              jlhao:prefLabel "Textile"@en-us ;
+              jlhao:definition "A flexible material composed of woven, knitted, or non-woven fibers or yarns, used in fabrics and industrial applications."@en-us ;
+              jlhao:exampleValues "Natural Fiber (e.g., Cotton, Wool, Silk)"@en-us ,
+                                   "Synthetic Fiber (e.g., Nylon, Polyester, Acrylic"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Time
+jlho:Time rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Measure ;
+           jlhao:prefLabel "Time"@en-us ;
+           jlhao:definition "A point in time, duration or method of measuring the passage of time."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#TimeInstant
+jlho:TimeInstant rdf:type owl:Class ;
+                  rdfs:subClassOf jlho:Time ;
+                  jlhao:prefLabel "Time Instant"@en-us ;
+                  jlhao:definition "A finite segment of time, with no extent or duration."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#TimeInterval
+jlho:TimeInterval rdf:type owl:Class ;
+                   rdfs:subClassOf jlho:Time ;
+                   jlhao:prefLabel "Time Interval"@en-us ;
+                   jlhao:definition "A finite segment of time, with an extent or duration."@en-us ;
+                   jlhao:usageNote "Every time interval has a beginning, an end, and a duration, even if not known."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#TimeOfDay
+jlho:TimeOfDay rdf:type owl:Class ;
+                rdfs:subClassOf jlho:TimeInterval ;
+                jlhao:prefLabel "Time Of Day"@en-us ;
+                jlhao:definition "A common period within a day, grouped together to indicate a range."@en-us ;
+                jlhao:exampleValues "Morning, Evening, Afternoon, Dusk"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#TimePeriod
+jlho:TimePeriod rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:TimeInterval ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasEndTime ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasStartTime ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                              # can have 0 or 1 :hasDuration -> :Duration
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDuration ;
+                                  owl:allValuesFrom :Duration
+                                ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty jlho:hasDuration ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+                 jlhao:prefLabel "Time Period"@en-us ;
+                 jlhao:definition "A time span over some finite window."@en-us ;
+                 jlhao:usageNote "A time period is defined by at least two of three properties: (1) a start time, (2) an end time, and (3) a duration. If more than one of these properties is missing, the time period may be invalid or unknown."@en-us ,
+                                  "A time period is unknown if either the starting or ending time has no value. If a time period is unknown, then the duration should either be omitted or unknown (have no value)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Tool
+jlho:Tool rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Equipment ;
+           jlhao:prefLabel "Tool"@en-us ;
+           jlhao:definition "A device or implement, used to carry out a particular function.."@en-us .
+          #  jlhao:exampleValues "Torque Wrench, Soldering Iron, Voltmeter"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Topic
+jlho:Topic rdf:type owl:Class ;
+                rdfs:subClassOf jlho:FieldOfPractice ;
+                jlhao:prefLabel "Topic"@en-us ;
+                jlhao:definition "A specialized area of knowledge, concern, or activity that sits inside a broader concept. "@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Trade
+# jlho:Trade rdf:type owl:Class ;
+#             rdfs:subClassOf jlho:Activity ;
+#             jlhao:prefLabel "Trade"@en-us ;
+#             jlhao:definition "The action of buying and selling goods or services."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Transport
+# jlho:Transport rdf:type owl:Class ;
+#                 rdfs:subClassOf jlho:Activity ;
+#                 jlhao:prefLabel "Transport"@en-us ;
+#                 jlhao:definition "A means of conveying people or goods from place to place by means of a vehicle, aircraft, or ship."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#UOMDimension
+jlho:UOMDimension rdf:type owl:Class ;
+                    rdfs:subClassOf jlho:Dimension ,
+                  # can have 0 or more :hasApplicableUOM -> :UnitOfMeasure
+                      [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasApplicableUOM ;
+                      owl:allValuesFrom :UnitOfMeasure
+                    ] ;
+                    # [ rdf:type owl:Restriction ;
+                    #   owl:onProperty :hasApplicableUOM ;
+                    #   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                    # ] ;
+                    jlhao:prefLabel "UOM Dimension"@en-us ;
+                    jlhao:definition "An abstract property of units and quantity neglecting its vectorial or tensorial character and all numerical factors including its sign."@en-us ;
+                    jlhao:explanatoryNote "Many UOM dimensions are related to each other by various physical laws, and as a result, the associated units of some dimensions can be expressed as products (or ratios) of powers of other dimensions (e.g., momentum is mass times velocity and velocity is defined as distance divided by time). In this way, some quantities can be calculated from other measured quantities using their associations to the dimansions in these expressions."@en-us ;
+                    jlhao:example "Length is a dimension while the height of a rocket is a specific quantity (Quantity) of length; its magnitude that may be expressed with a unit of measurement (meter, foot, inch, etc.)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#UOMPrefix
+jlho:UOMPrefix rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:Measurement ;
+                 jlhao:prefLabel "UOM Prefix"@en-us ;
+                 jlhao:definition "A prefix is a name that precedes a basic unit of measure to indicate a decimal or binary multiple or fraction of the unit."@en-us ;
+                 jlhao:example "An electric current of 0.000 000 001 ampere is written by using the SI-prefix nano as 1 nanoampere or 1 nA."@en-us ;
+                 jlhao:note "Each prefix has a unique symbol that is prepended to the unit symbol."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#URI
+jlho:URI rdf:type owl:Class ;
+          rdfs:subClassOf jlho:UniqueIdentifier ;
+          jlhao:prefLabel "URI"@en-us ;
+          jlhao:definition "Uniform Resource Identifier - a string of characters that identifies a specific resource, such as a webpage, a file, or a service."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#URL
+jlho:URL rdf:type owl:Class ;
+          rdfs:subClassOf jlho:URI ;
+          jlhao:prefLabel "URL"@en-us ;
+          jlhao:definition "Uniform Resource Locator - a specific type of URI that provides the web address or location of a resource on the internet."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#UniqueIdentifier
+jlho:UniqueIdentifier rdf:type owl:Class ;
+                       rdfs:subClassOf jlho:Identifier ;
+                       jlhao:prefLabel "Unique Identifier"@en-us ;
+                       jlhao:definition "Something, such as an ID or code, that uniquely identifies something."@en-us .
+
+###  https://semantic-data.jlh.com/im/jlho#UnitOfMeasure
+jlho:UnitOfMeasure rdf:type owl:Class ;
+           rdfs:subClassOf jlho:Measurement ,
+          # can have 0 or more :unitSymbol -> constant (Datatype)
+          # this is not needed...unless it is preventing negative numbers?
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :UOMSymbol ;
+              owl:minCardinality "0"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or 1 :hasExponent -> constant (Datatype)
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMExponent ;
+              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or 1 :hasPrefix -> :UOMPrefix
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMPrefix ;
+              owl:allValuesFrom :UOMPrefix
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMPrefix ;
+              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or 1 :hasDenominator -> :UnitOfMeasure
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMDenominator ;
+              owl:allValuesFrom :UnitOfMeasure
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMDenominator ;
+              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or 1 :hasUOMNumerator -> :UnitOfMeasure
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMNumerator ;
+              owl:allValuesFrom :UnitOfMeasure
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMNumerator ;
+              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or 1 :hasUOMTerm1 -> :UnitOfMeasure
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMTerm1 ;
+              owl:allValuesFrom :UnitOfMeasure
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMTerm1 ;
+              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or 1 :hasUOMTerm2 -> :UnitOfMeasure
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMTerm2 ;
+              owl:allValuesFrom :UnitOfMeasure
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMTerm2 ;
+              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ] ,
+
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMBase ;
+              owl:allValuesFrom :UnitOfMeasure
+            ] ,
+          # this is not needed...
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasUOMBase ;
+              owl:minCardinality "0"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or more :applicableUOMSystem -> :UnitOfMeasureSystem
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :applicableUOMSystem ;
+              owl:allValuesFrom :UnitOfMeasureSystem
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :applicableUOMSystem ;
+              owl:minCardinality "0"^^xsd:nonNegativeInteger
+            ] ,
+          # can have 0 or more :appliesToUOMDimension -> :Dimension
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :appliesToUOMDimension ;
+              owl:allValuesFrom :UOMDimension
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :appliesToUOMDimension ;
+              owl:minCardinality "0"^^xsd:nonNegativeInteger
+            ] ;
+           jlhao:altLabel "Unit Of Measurement"@en-us ;
+           jlhao:altLabel "UOM"@en-us ;
+           jlhao:acronym "UOM"@en-us ;
+           jlhao:prefLabel "Unit Of Measure"@en-us ;
+           jlhao:definition "A definite magnitude of a quantity, defined and adopted by convention or by law."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#UnitOfMeasureSet
+jlho:UnitOfMeasureSet rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:StandardizationSet ;
+                 jlhao:prefLabel "Unit Of Measure Set"@en-us ;
+                 jlhao:definition "A coherent, interdependent set of units of measure."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#UnitOfMeasureSystem
+jlho:UnitOfMeasureSystem rdf:type owl:Class ;
+                 rdfs:subClassOf jlho:StandardizationSystem ;
+                 jlhao:prefLabel "Unit Of Measure System"@en-us ;
+                 jlhao:definition "A system that defines the rules that generate or constrain a unit of measure set."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#UserGuide
+jlho:UserGuide rdf:type owl:Class ;
+                rdfs:subClassOf jlho:Manual ;
+                jlhao:prefLabel "User Guide"@en-us ;
+                jlhao:definition "A document that provides instructions and information on how to use a product or service, often including step-by-step directions, troubleshooting tips, and frequently asked questions."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Vehicle
+jlho:Vehicle rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Object ;
+              jlhao:prefLabel "Vehicle"@en-us ;
+              jlhao:definition "A thing used for transporting people or goods."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Version
+jlho:Version rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Intangible ;
+              jlhao:prefLabel "Version"@en-us ;
+              jlhao:definition "A specific edition or form of something."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Vitamin
+jlho:Vitamin rdf:type owl:Class ;
+              rdfs:subClassOf jlho:BiologicalSubstance ;
+              jlhao:prefLabel "Vitamin"@en-us ;
+              jlhao:definition "A nutrient that an organism needs in small amounts to function and stay healthy."@en-us ;
+              jlhao:exampleValues "Fat-soluble (A, D, E, K) and Water-soluble (B Vitamins and C)"@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Weather
+jlho:Weather rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Phenomenon ;
+              jlhao:prefLabel "Weather"@en-us ;
+              jlhao:definition "Weather describes conditions of the atmosphere over a short period of time (minutes to days), whereas climate is how the atmosphere behaves over relatively longer periods of time (the long-term average of weather over time)."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Webinar
+jlho:Webinar rdf:type owl:Class ;
+              rdfs:subClassOf jlho:Occasion ;
+              jlhao:prefLabel "Webinar"@en-us ;
+              jlhao:definition "A seminar or other presentation that takes place in the Internet."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Website
+jlho:Website rdf:type owl:Class ;
+              rdfs:subClassOf jlho:DigitalLocation ;
+              jlhao:prefLabel "Website"@en-us ;
+              jlhao:definition "A collection of files accessed through a web address, covering a particular theme or subject, and managed by a particular person or organization."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Wood
+jlho:Wood rdf:type owl:Class ;
+           rdfs:subClassOf jlho:EngineeredMaterial ;
+           jlhao:prefLabel "Wood"@en-us ;
+           jlhao:definition "A natural composite material derived from trees, used for structural, fuel, or manufacturing purposes; composed mainly of cellulose fibers in a lignin matrix."@en-us ;
+           jlhao:exampleValues "Hard Wood, Soft Wood, Engineered Wood"@en-us .
+
+
+# ###  https://semantic-data.jlh.com/im/jlho#WorkingHours
+# jlho:WorkingHours rdf:type owl:Class ;
+#                    rdfs:subClassOf jlho:TimePeriod ;
+#                    jlhao:prefLabel "Working Hours"@en-us ;
+#                    jlhao:definition "The period during which an employee is expected to be present and actively engaged in work-related activities."@en-us .
+
+
+###  https://semantic-data.jlh.com/im/jlho#Workshop
+jlho:Workshop rdf:type owl:Class ;
+               rdfs:subClassOf jlho:Occasion ;
+               jlhao:prefLabel "Workshop"@en-us ;
+               jlhao:definition "A meeting in which a group of people engage in discussion and activity on a particular subject or project."@en-us .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
